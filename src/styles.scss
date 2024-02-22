@@ -1,0 +1,561 @@
+@mixin flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+// TO DO: create mixin for a scrollbar
+@media (prefers-color-scheme: light) {
+  :root {
+    // light theme colors
+    --color1: #181b0e;
+    --color2: #fbc789;
+    --color3: #fefcfb;
+    --color4: #f58a07;
+    --color5: #feecd8;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    // dark theme colors 
+    --color1: #fef6eb;
+    --color2: #141414;
+    --color3: #333333;
+    --color4: #f58a07;
+    --color5: #292929;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--color1);
+}
+
+html {
+  font-size: 120%;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+}
+
+#root {
+  @include flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--color3);
+}
+
+.divider {
+  height: 1px;
+  margin: 1vh auto;
+  background-color: var(--color1);
+}
+
+.divider.big {
+  width: 90%;
+}
+
+.divider.medium {
+  width: 50%;
+}
+
+.divider.vertical {
+  display: none;
+}
+
+// NAV ////////////////////////////////////////////////////////
+nav.active {
+  top: 0;
+}
+
+nav {
+  position: fixed;
+  top: -68px;
+  width: 100%;
+  height: auto;
+  z-index: 3;
+  background-color: var(--color5);
+  transition: top 0.4s;
+
+
+  .nav-wrapper-wrapper {
+    @include flex;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 68px;
+    border-bottom: 3px solid var(--color1);
+    color: var(--color3);
+  }
+
+  .nav-wrapper {
+    padding: 7px;
+  }
+
+  .nav-wrapper.right {
+    @include flex;
+
+    select {
+      height: 50px;
+      padding: 3px 12px;
+      border: 1px solid var(--color1);
+      margin: 2px;
+      background-color: var(--color2);
+      cursor: pointer;
+    }
+
+    // TO DO: make language selection work
+
+    select:hover {
+      color: var(--color1);
+      background-color: var(--color4);
+      border: 1px solid var(--color1);
+    }
+
+    button {
+      width: 50px;
+      height: 50px;
+      border: 1px solid var(--color1);
+      margin: 2px;
+      background-color: var(--color2);
+      cursor: pointer;
+    }
+
+    // TO DO: make light theme selection work
+    // cookie to remember user choice?
+
+    button:hover {
+      background-color: var(--color4);
+      border: 1px solid var(--color1);
+    }
+
+    svg {
+      width: 50px;
+      height: 50px;
+      padding: 8px;
+      fill: var(--color1);
+    }
+  }
+
+  // Custom hamburger button /////
+  .hamburger {
+    @include flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+  .hamburger-middle {
+    margin: 15px 0;
+  }
+
+  .hamburger-top,
+  .hamburger-middle,
+  .hamburger-bottom {
+    width: 50px;
+    height: 1px;
+    background-color: var(--color1);
+    transition: 0.4s ease;
+  }
+
+  .hamburger.active .hamburger-top {
+    transform: translate3d(0px, 16px, 0px) scale3d(1, 1, 1) rotateZ(45deg);
+    transform-style: preserve-3d;
+    transition: 0.4s ease;
+  }
+
+  .hamburger.active .hamburger-middle {
+    opacity: 0;
+    transition: 0.4s ease;
+  }
+
+  .hamburger.active .hamburger-bottom {
+    transform: translate3d(0px, -16px, 0px) scale3d(1, 1, 1) rotateZ(-45deg);
+    transform-style: preserve-3d;
+    transition: 0.4s ease;
+  }
+
+  // Full screen nav list /////
+  .nav-list {
+    display: none;
+    height: 92vh;
+    background-color: var(--color3);
+    list-style: none;
+
+    li {
+      button {
+        width: 100vw;
+        min-height: 7vh;
+        padding: 5px;
+        text-align: center;
+        font-weight: 700;
+        background-color: var(--color3);
+        cursor: pointer;
+      }
+
+      button:hover {
+        color: var(--color5);
+        background-color: var(--color1);
+      }
+    }
+  }
+
+  .nav-list.active {
+    @include flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  svg {
+    fill: black;
+  }
+}
+
+// HEADER ////////////////////////////////////////////////////////
+header {
+  @include flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  color: var(--color1);
+  text-align: center;
+
+  h1,
+  h2 {
+    margin: 15vh 0;
+  }
+}
+
+// INTRO ////////////////////////////////////////////////////////
+#intro {
+  width: 100%;
+  margin: 10vh 0;
+  background-image: linear-gradient(var(--color3), var(--color5) 10%, var(--color5) 90%, var(--color3));
+
+  .intro-content-wrapper {
+    height: 80%;
+    max-width: 1080px;
+    margin: 10vh auto;
+    text-align: center;
+
+    p {
+      margin: 15px;
+      text-align: left;
+    }
+
+    h2,
+    h3 {
+      margin: 1vh auto;
+    }
+
+    li {
+      margin-left: 22vw;
+      text-align: left;
+    }
+  }
+}
+
+// PROJECTS ////////////////////////////////////////////////////////
+#projects {
+  width: 100%;
+  margin-top: 10vh;
+  text-align: center;
+
+  .projects-wrapper {
+    @include flex;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    // scrollbars mixin
+
+    .project {
+      min-width: 260px;
+      min-height: 380px;
+      border: 3px solid var(--color1);
+      border-radius: 12px;
+      margin: 15px;
+      overflow: hidden;
+
+      a {
+        position: relative;
+        text-decoration: none;
+
+        .project-img-wrapper {
+          width: 260px;
+          height: 347px;
+          overflow: hidden;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-position: center;
+          object-fit: cover;
+        }
+
+        figcaption {
+          max-width: 260px;
+          border-top: 1px solid var(--color1);
+          line-height: 33px;
+          text-align: center;
+          color: var(--color1);
+          background-color: var(--color2);
+        }
+      }
+
+      #disclaimer {
+        font-size: 0.5em;
+      }
+    }
+
+    .project:hover {
+      border: 3px solid var(--color4);
+
+      img {
+        transform: scale(1.1);
+        transition: transform 0.4s ease-in;
+      }
+
+      figcaption {
+        border-top: 1px solid var(--color4);
+      }
+    }
+  }
+
+  p {
+    margin: 2vh auto;
+    text-align: center;
+
+    a {
+      color: var(--color4);
+    }
+  }
+
+  .transition {
+    margin-top: 3em;
+  }
+}
+
+// CONTACT ////////////////////////////////////////////////////////
+#contact {
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+  height: 70vh;
+  background-image: linear-gradient(var(--color3) 47%, var(--color2) 53%);
+  text-align: center;
+
+  .form-wrapper {
+    position: absolute;
+    top: 1vh;
+    right: 1vw;
+    bottom: 1vh;
+    left: 1vw;
+    z-index: 2;
+    max-width: 1080px;
+    margin: 8vh auto 0 auto;
+
+    h2 {
+      text-align: center;
+
+      span {
+        font-size: 0.5em;
+      }
+    }
+
+    form {
+      @include flex;
+      flex-direction: column;
+      padding: 1vh 1vw;
+      border: 3px solid var(--color1);
+      background-color: var(--color5);
+
+      * {
+        width: 90%;
+      }
+
+      input,
+      textarea {
+        font-size: 1em;
+        line-height: 1.2em;
+        word-wrap: break-word;
+        border: 1px solid var(--color1);
+        background-color: white;
+        resize: none;
+      }
+
+      .submit {
+        padding: 8px;
+        border: 1px solid var(--color1);
+        margin: 1vh 1vw;
+        background-color: var(--color2);
+        cursor: pointer;
+      }
+
+      .submit:hover {
+        background-color: var(--color4);
+      }
+    }
+  }
+}
+
+// FOOTER ////////////////////////////////////////////////////////
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 3vh 3vw;
+  background-color: var(--color2);
+
+  p {
+    margin: 2vh auto;
+    text-align: center;
+  }
+
+  .ref-wrapper {
+    @include flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .ref-logo {
+      width: 12vw;
+      max-width: 50px;
+      height: auto;
+      margin: 1vh 1vw;
+      fill: var(--color1);
+    }
+  }
+
+  // TO DO: media query to show stuff horizontally on large screens
+}
+
+// MEDIA QUERIES ////////////////////////////////////////////////////////
+// X-Small devices (portrait phones, less than 576px)
+// Small devices (landscape phones, 576px and up) => TO DO: landscape phones (very wide, not very tall)
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up) /////
+@media (min-width: 768px) {
+
+  // INTRO /////
+  #intro {
+    .lists-wrapper {
+      display: flex;
+      align-items: flex-start;
+      flex-flow: row nowrap;
+      max-width: 80%;
+      margin: 0 auto;
+
+      li {
+        margin: 0;
+        text-align: center;
+        list-style: none;
+      }
+
+      .divider.medium {
+        display: none;
+      }
+
+      .divider.vertical {
+        display: block;
+        width: 1px;
+        height: 15em;
+        background-color: var(--color1);
+      }
+    }
+  }
+
+  // FOOTER /////
+  footer {
+    flex-direction: row;
+    justify-content: center;
+    align-items: space-between;
+    padding: 3vh 0;
+    font-size: 60%;
+
+    p {
+      line-height: 30px;
+    }
+
+    .ref-wrapper {
+      flex-direction: row;
+
+      .ref-logo {
+        max-width: 30px;
+      }
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up) //////
+@media (min-width: 992px) {
+  footer {
+    font-size: 70%;
+
+    p {
+      line-height: 35px;
+    }
+
+    .ref-wrapper {
+      .ref-logo {
+        max-width: 35px;
+      }
+    }
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up) /////
+@media (min-width: 1200px) {
+  footer {
+    font-size: 80%;
+
+    p {
+      line-height: 40px;
+    }
+
+    .ref-wrapper {
+      .ref-logo {
+        max-width: 40px;
+      }
+    }
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up) /////
+@media (min-width: 1448px) {
+  #projects {
+    .projects-wrapper {
+      justify-content: center;
+
+      .project {
+        min-width: 18vw;
+
+        a {
+          .project-img-wrapper {
+            width: 18vw;
+          }
+
+          figcaption {
+            max-width: 18vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+// XXX-Large devices =>TO DO: big screens (very very wide and very very tall)
+@media (min-width: 1921px) {}
+
+// TO DO: media query for color scheme => browser detection, rest works ok. Need to change dark color palette
+// TO DO: load img of different sizes depending on screen size => srcset
+// TO DO: arya
