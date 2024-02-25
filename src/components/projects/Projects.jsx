@@ -27,9 +27,9 @@ Project.propTypes = {
 
 function Projects() {
     return (
-        <div className="page-section" id="projects">
+        <section className="page-section" id="projects">
             <h2>Explore the projects that helped me develop my skills</h2>
-            <p>From newest to oldest.</p>
+            <p id="top-info">From newest to oldest.</p>
             <div className="projects-wrapper">
                 <Project
                     href="https://github.com/S-Guerra/FryderykGPT"
@@ -66,7 +66,7 @@ function Projects() {
             <div className="divider medium"></div>
             <p>Visit my <a href="https://github.com/S-Guerra">Github</a> & <a href="https://codepen.io/LeSGuerra">Codepen</a> pages for more</p>
             <p className="transition">or better...</p>
-        </div >
+        </section >
     )
 }
 
