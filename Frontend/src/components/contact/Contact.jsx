@@ -4,15 +4,21 @@ function Contact() {
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        try {
+            await sendEmail();
+            setSuccessMessage("Email sent successfully");
+        } catch (err) {
+            setErrorMessage(`Error while processing email: ${err.message}`);
+        }
     };
 
-    const baseURL = "http://localhost:5173/"
-
     const sendEmail = async () => {
-        const res = await fetch("/send-email", {
+        await fetch("http://localhost:3001/api/send-email", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -65,6 +71,8 @@ function Contact() {
                     ></textarea>
                     <div className="g-recaptcha" data-sitekey="6LfgI2wpAAAAANOlvY16UYL7hZlKCtx-xNcnb8Kw"></div>
                     <input className="submit" type="submit" value="Send" />
+                    {errorMessage && <p className="error">{errorMessage}</p>}
+                    {successMessage && <p className="success">{successMessage}</p>}
                 </form>
             </div>
         </section>
