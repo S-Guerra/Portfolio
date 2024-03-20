@@ -32,7 +32,6 @@ function Footer() {
                     </svg>
                 </a>
             </div>
-            <p>Colors by <a href="https://coolors.co/?ref=65c7d722c0b777000b18880a">Coolors</a></p>
             <p>© {new Date().getFullYear()} Stelio Guerra</p>
         </footer>
     )
