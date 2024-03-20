@@ -1,17 +1,35 @@
 import { useState } from "react";
 
 function Contact() {
-    const [userName, setUserName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
+    const [userName, setUserName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        console.log('Name:', userName);
-        console.log('Email:', email);
-        console.log('Message:', message);
     };
+
+    const baseURL = "http://localhost:5173/"
+
+    const sendEmail = async () => {
+        const res = await fetch("/send-email", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: userName,
+                email: email,
+                message: message,
+            })
+        }).then(res => {
+            if (!res.ok) throw new Error("Network response was not ok...");
+        }).then(data => {
+            console.log(data);
+        }).catch(err => {
+            console.error(`Error while processing email: ${err}`);
+        })
+    }
 
     return (
         <section className="page-section" id="contact">
