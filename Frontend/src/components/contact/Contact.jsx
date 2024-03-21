@@ -7,16 +7,6 @@ function Contact() {
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            await sendEmail();
-            setSuccessMessage("Email sent successfully");
-        } catch (err) {
-            setErrorMessage(`Error while processing email: ${err.message}`);
-        }
-    };
-
     const sendEmail = async () => {
         await fetch("http://localhost:3001/api/send-email", {
             method: "POST",
@@ -36,6 +26,16 @@ function Contact() {
             console.error(`Error while processing email: ${err}`);
         })
     }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await sendEmail();
+            setSuccessMessage("Email sent successfully");
+        } catch (err) {
+            setErrorMessage(`Error while processing email: ${err.message}`);
+        }
+    };
 
     return (
         <section className="page-section" id="contact">

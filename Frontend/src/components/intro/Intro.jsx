@@ -1,4 +1,7 @@
 function Intro() {
+    const devSkills = ["HTML5", "CSS3", "SCSS/SASS", "JavaScript", "React.js", "Node.js", "Express.js", "Bash", "PostgreSQL", "MongoDB"];
+    const learningSkills = ["Self-Discipline and Time Management", "Problem-Solving", "Resilience and Perseverance", "Adaptability and Flexibility", "Research Skills", "Critical Thinking", "Retention and Understanding"];
+
     return (
         <section className="page-section intro" id="intro">
             <div className="intro-content-wrapper">
@@ -18,16 +21,9 @@ function Intro() {
                         <div>
                             <h3>🖥️ Dev skills</h3>
                             <ul>
-                                <li>HTML5</li>
-                                <li>CSS3</li>
-                                <li>SCSS/SASS</li>
-                                <li>JavaScript</li>
-                                <li>React.js</li>
-                                <li>Node.js</li>
-                                <li>Express.js</li>
-                                <li>Bash</li>
-                                <li>PostgreSQL</li>
-                                <li>MongoDB</li>
+                                {devSkills.map((item, index) => (
+                                    <li key={index}>{item}</li>
+                                ))}
                             </ul>
                         </div>
                         <div className="divider medium"></div>
@@ -35,13 +31,9 @@ function Intro() {
                         <div>
                             <h3>📚 Learning skills</h3>
                             <ul>
-                                <li>Self-Discipline and Time Management</li>
-                                <li>Problem-Solving</li>
-                                <li>Resilience and Perseverance</li>
-                                <li>Adaptability and Flexibility</li>
-                                <li>Research Skills</li>
-                                <li>Critical Thinking</li>
-                                <li>Retention and Understanding</li>
+                                {learningSkills.map((item, index) => (
+                                    <li key={index}>{item}</li>
+                                ))}
                             </ul>
                         </div>
                     </div>

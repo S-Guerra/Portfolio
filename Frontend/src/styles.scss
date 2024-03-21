@@ -235,6 +235,7 @@ header {
   }
 
   span {
+    padding: 0 5px;
     background-color: var(--color4);
   }
 }
@@ -410,6 +411,7 @@ header {
         word-wrap: break-word;
         padding: 3px;
         border: 1px solid var(--color1);
+        color: #141414;
         background-color: white;
         resize: none;
       }

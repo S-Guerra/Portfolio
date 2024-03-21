@@ -28,35 +28,51 @@ function Nav() {
 
     useEffect(() => {
         function turnLightsOnOff() {
-            let root = document.documentElement
-            if (isLightMode) {
-                root.style.setProperty("--color1", "#181b0e");
-                root.style.setProperty("--color2", "#fbc789");
-                root.style.setProperty("--color3", "#fefcfb");
-                root.style.setProperty("--color4", "#f58a07");
-                root.style.setProperty("--color5", "#feecd8");
-            } else {
-                root.style.setProperty("--color1", "#fef6eb");
-                root.style.setProperty("--color2", "#141414");
-                root.style.setProperty("--color3", "#333333");
-                root.style.setProperty("--color4", "#f58a07");
-                root.style.setProperty("--color5", "#292929");
-            }
+            const root = document.documentElement;
+            const lightModeColors = {
+                "--color1": "#181b0e",
+                "--color2": "#fbc789",
+                "--color3": "#fefcfb",
+                "--color4": "#f58a07",
+                "--color5": "#feecd8"
+            };
+            const darkModeColors = {
+                "--color1": "#fef6eb",
+                "--color2": "#141414",
+                "--color3": "#333333",
+                "--color4": "#f58a07",
+                "--color5": "#292929"
+            };
+            const colors = isLightMode ? lightModeColors : darkModeColors;
+
+            Object.keys(colors).forEach(key => {
+                root.style.setProperty(key, colors[key]);
+            });
         }
         turnLightsOnOff()
     }, [isLightMode, toggleMode]);
 
-    function scrollToSection(sectionId) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-        }
-    }
-
-    function handleHamburger() {
+    const handleHamburger = () => {
         document.body.style.overflow = isHamburgerActive ? "auto" : "hidden";
         setIsHamburgerActive(!isHamburgerActive);
     }
+
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) section.scrollIntoView({ behavior: "smooth" });
+    }
+
+    const sections = [
+        { name: "top", description: "Back to the top" },
+        { name: "intro", description: "Intro" },
+        { name: "projects", description: "Projects" },
+        { name: "contact", description: "Hire me" }
+    ];
+    const languages = [
+        { label: "EN", code: "en-US" },
+        { label: "FR", code: "fr-BE" },
+        { label: "IT", code: "it" }
+    ];
 
     return (
         <nav className={`page-section ${isNavbarVisible ? "active" : ""}`}>
@@ -69,39 +85,23 @@ function Nav() {
                     </div>
                 </div>
                 <div className="nav-wrapper right">
-                    <select name="Languages" id="lang-list">
-                        <option value="English">EN</option>
-                        <option value="Français">FR</option>
-                        <option value="Italiano">IT</option>
+                    <select name="Languages" id="lang-list" defaultValue="EN">
+                        {languages.map(({ code, label }, index) => (
+                            <option key={index} value={code}>{label}</option>
+                        ))}
                     </select>
                     <button id="light-switch" onClick={toggleMode}>{isLightMode ? moonSVG : sunSVG}</button>
                 </div>
             </div>
             <ul className={`nav-list ${isHamburgerActive ? "active" : ""}`}>
-                <li className="nav-list-element">
-                    <button onClick={() => {
-                        scrollToSection("top")
-                        handleHamburger()
-                    }}>Back to the top</button>
-                </li>
-                <li className="nav-list-element">
-                    <button onClick={() => {
-                        scrollToSection("intro")
-                        handleHamburger()
-                    }}>Intro</button>
-                </li>
-                <li className="nav-list-element">
-                    <button onClick={() => {
-                        scrollToSection("projects")
-                        handleHamburger()
-                    }}>Projects</button>
-                </li>
-                <li className="nav-list-element">
-                    <button onClick={() => {
-                        scrollToSection("contact")
-                        handleHamburger()
-                    }}>Hire me</button>
-                </li>
+                {sections.map((item, index) => (
+                    <li className="nav-list-element" key={index}>
+                        <button onClick={() => {
+                            scrollToSection(item.name)
+                            handleHamburger()
+                        }}>{item.description}</button>
+                    </li>
+                ))}
             </ul>
         </nav>
     );
