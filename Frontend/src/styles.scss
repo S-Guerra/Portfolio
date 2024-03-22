@@ -244,7 +244,7 @@ header {
 #intro {
   width: 100%;
   padding-top: 10vh;
-  background-image: linear-gradient(var(--color3), var(--color5) 50%);
+  background-image: linear-gradient(var(--color3), var(--color2) 15%);
 
   .intro-content-wrapper {
     height: 80%;
@@ -257,23 +257,40 @@ header {
       text-align: left;
     }
 
-    h2,
-    h3 {
-      margin: 1vh auto;
-    }
-
     h2 {
       text-align: left;
       text-indent: 15px;
     }
 
+    h2,
+    h3 {
+      margin: 1vh auto;
+    }
+
+    #skills-intro {
+      padding: 7vh 0 5vh 0;
+    }
+
+
     li {
-      margin-left: 22vw;
-      text-align: left;
+      list-style: none;
+      line-height: 2em;
     }
 
     .lists-wrapper {
-      padding-bottom: 10vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-flow: column nowrap;
+      padding-bottom: 7vh;
+
+      .list {
+        width: 90vw;
+        padding: 1vh 1vw;
+        border: 3px solid var(--color1);
+        margin: 3vh auto;
+        background-color: var(--color5);
+      }
     }
   }
 }
@@ -283,7 +300,7 @@ header {
   width: 100%;
   padding-top: 10vh;
   text-align: center;
-  background-image: linear-gradient(var(--color5), var(--color3) 50%);
+  background-image: linear-gradient(var(--color2), var(--color3) 15%);
 
   .projects-wrapper {
     @include flex;
@@ -420,12 +437,13 @@ header {
         padding: 8px;
         border: 1px solid var(--color1);
         margin: 1vh 1vw;
-        background-color: var(--color2);
+        background-color: var(--color4);
         cursor: pointer;
       }
 
       .submit:hover {
-        background-color: var(--color4);
+        color: var(--color1);
+        background-color: var(--color2);
       }
     }
   }
@@ -472,28 +490,18 @@ footer {
 
   // INTRO /////
   #intro {
-    .lists-wrapper {
-      display: flex;
-      align-items: flex-start;
-      flex-flow: row nowrap;
-      max-width: 80%;
-      margin: 0 auto;
+    .intro-content-wrapper {
+      .lists-wrapper {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        max-width: 80%;
+        margin: 0 auto;
 
-      li {
-        margin: 0;
-        text-align: center;
-        list-style: none;
-      }
-
-      .divider.medium {
-        display: none;
-      }
-
-      .divider.vertical {
-        display: block;
-        width: 1px;
-        height: 15em;
-        background-color: var(--color1);
+        .list {
+          max-width: 45%;
+          margin: 0 3vh;
+        }
       }
     }
   }
@@ -580,6 +588,5 @@ footer {
 // XXX-Large devices =>TO DO: big screens (very very wide and very very tall)
 @media (min-width: 1921px) {}
 
-// TO DO: media query for color scheme => browser detection, rest works ok. Need to change dark color palette
 // TO DO: load img of different sizes depending on screen size => srcset
 // TO DO: arya

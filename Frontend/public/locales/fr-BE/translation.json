@@ -1,0 +1,54 @@
+{
+    "nav": {
+        "top": "Back to the top",
+        "intro": "Intro",
+        "projects": "Projects",
+        "contact": "Hire me"
+    },
+    "header": {
+        "intro": "Hi, I&apos;m ",
+        "job": "A self-taught Web Developer",
+        "discover": "Learn more about me"
+    },
+    "intro": {
+        "intro": "How I embarked on this journey",
+        "story": "After suffering an injury last year that left me with two broken legs, I decided to use my recovery time to explore a new field: front-end development.<br /><br />With the encouragement and support of a dear friend and my passion for problem-solving, I quickly found front-end development to be a captivating and enjoyable challenge, approaching each problem as a fun and exciting puzzle.<br /><br />I have almost completed my self-taught training and am eager to start working in this fascinating field. I am thrilled to be able to combine my creativity with my technical skills to bring innovative solutions to my future employers.<br />",
+        "skillsTitle": "Skills I have developed through my self-learning journey",
+        "devSkills": "🖥️ Dev skills",
+        "learningSkills": "📚 Learning skills",
+        "learningSkillsList": [
+            "Self-Discipline and Time Management",
+            "Problem-Solving",
+            "Resilience and Perseverance",
+            "Adaptability and Flexibility",
+            "Research Skills",
+            "Critical Thinking",
+            "Retention and Understanding"
+        ]
+    },
+    "projects": {
+        "intro": "Explore the projects that helped me develop my skills",
+        "order": "From newest to oldest.",
+        "captions": [
+            "FryderykGPT",
+            "Casio Calculator",
+            "Drum Machine",
+            "Interactive USA Map",
+            "Pure CSS Art"
+        ],
+        "disclaimer": "Please note that some of these projects were developed without responsive design considerations and may not display optimally on all devices.",
+        "links": "Visit my <a href='https: //github.com/S-Guerra'>Github</a> & <a href='https://codepen.io/LeSGuerra'>Codepen</a> pages for more",
+        "better": "or better..."
+    },
+    "contact": {
+        "intro": "Hire me! <span className='smaller'>(if you dare)</span>",
+        "name": "Name",
+        "email": "Email",
+        "message": "Message"
+    },
+    "footer": {
+        "caffeine": "☕ Powered by caffeine",
+        "findMe": "Find me on:",
+        "license": "This Page is subject to the terms of the "
+    }
+}

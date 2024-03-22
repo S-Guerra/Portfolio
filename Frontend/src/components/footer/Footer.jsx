@@ -32,8 +32,8 @@ function Footer() {
                     </svg>
                 </a>
             </div>
-            <p>© {new Date().getFullYear()} Stelio Guerra</p>
-        </footer>
+            <p>This Page is subject to the terms of the <a target="_blank" rel="noreferrer" href="https://www.mozilla.org/media/MPL/2.0/index.f75d2927d3c1.txt">Mozilla Public License, v. 2.0.</a></p>
+        </footer >
     )
 }
 

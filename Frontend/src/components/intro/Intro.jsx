@@ -15,10 +15,9 @@ function Intro() {
                 </div>
                 <div className="divider big"></div>
                 <div className="skills-wrapper">
-                    <h3>Skills I have developed through my self-learning journey</h3>
-                    <div className="divider medium"></div>
+                    <h3 id="skills-intro">Skills I have developed through my self-learning journey</h3>
                     <div className="lists-wrapper">
-                        <div>
+                        <div className="list">
                             <h3>🖥️ Dev skills</h3>
                             <ul>
                                 {devSkills.map((item, index) => (
@@ -26,9 +25,7 @@ function Intro() {
                                 ))}
                             </ul>
                         </div>
-                        <div className="divider medium"></div>
-                        <div className="vertical divider"></div>
-                        <div>
+                        <div className="list">
                             <h3>📚 Learning skills</h3>
                             <ul>
                                 {learningSkills.map((item, index) => (
