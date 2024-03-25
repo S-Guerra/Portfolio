@@ -6,13 +6,15 @@
         "contact": "Hire me"
     },
     "header": {
-        "intro": "Hi, I&apos;m ",
+        "intro": "Hi, I'm ",
         "job": "A self-taught Web Developer",
         "discover": "Learn more about me"
     },
     "intro": {
         "intro": "How I embarked on this journey",
-        "story": "After suffering an injury last year that left me with two broken legs, I decided to use my recovery time to explore a new field: front-end development.<br /><br />With the encouragement and support of a dear friend and my passion for problem-solving, I quickly found front-end development to be a captivating and enjoyable challenge, approaching each problem as a fun and exciting puzzle.<br /><br />I have almost completed my self-taught training and am eager to start working in this fascinating field. I am thrilled to be able to combine my creativity with my technical skills to bring innovative solutions to my future employers.<br />",
+        "storyPart1": "After suffering an injury last year that left me with two broken legs, I decided to use my recovery time to explore a new field: front-end development.",
+        "storyPart2": "With the encouragement and support of a dear friend and my passion for problem-solving, I quickly found front-end development to be a captivating and enjoyable challenge, approaching each problem as a fun and exciting puzzle.",
+        "storyPart3": "As I have completed my self-taught training, I am eager to start working in this fascinating field. I am thrilled to be able to combine my creativity with my technical skills to bring innovative solutions to my employers.",
         "skillsTitle": "Skills I have developed through my self-learning journey",
         "devSkills": "🖥️ Dev skills",
         "learningSkills": "📚 Learning skills",
@@ -36,12 +38,21 @@
             "Interactive USA Map",
             "Pure CSS Art"
         ],
+        "alts": [
+            "A portrait of Fryderyk Chopin",
+            "A Casio Personal Mini calculator",
+            "A React drum machine",
+            "A chloropleth map of the USA",
+            "A beautiful new retro wave sunset"
+        ],
         "disclaimer": "Please note that some of these projects were developed without responsive design considerations and may not display optimally on all devices.",
-        "links": "Visit my <a href='https: //github.com/S-Guerra'>Github</a> & <a href='https://codepen.io/LeSGuerra'>Codepen</a> pages for more",
+        "links1": "Visit my ",
+        "links2": " pages for more",
         "better": "or better..."
     },
     "contact": {
-        "intro": "Hire me! <span className='smaller'>(if you dare)</span>",
+        "intro": "Hire me! ",
+        "introSmaller": "(if you dare)",
         "name": "Name",
         "email": "Email",
         "message": "Message"

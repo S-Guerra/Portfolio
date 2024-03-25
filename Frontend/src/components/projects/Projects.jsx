@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
+
 
 import casio from "../../assets/casio.jpg"
 import chopin from "../../assets/chopin.jpg"
@@ -26,46 +28,50 @@ Project.propTypes = {
 }
 
 function Projects() {
+    const { t } = useTranslation();
+    const captions = t("projects.captions");
+    const alts = t("projects.alts");
+
     return (
         <section className="page-section" id="projects">
-            <h2>Explore the projects that helped me develop my skills</h2>
-            <p id="top-info">From newest to oldest.</p>
+            <h2>{t("projects.intro")}</h2>
+            <p id="top-info">{t("projects.order")}</p>
             <div className="projects-wrapper">
                 <Project
                     href="https://github.com/S-Guerra/FryderykGPT"
                     src={chopin}
-                    alt="A portrait of Fryderyk Chopin"
-                    figcaption="FryderykGPT"
+                    alt={alts[0]}
+                    figcaption={captions[0]}
                 />
                 <Project
                     href="https://codepen.io/LeSGuerra/pen/eYQyPgj"
                     src={casio}
-                    alt="A Casio Personal Mini calculator"
-                    figcaption="Casio Calculator"
+                    alt={alts[1]}
+                    figcaption={captions[1]}
                 />
                 <Project
                     href="https://codepen.io/LeSGuerra/pen/xxQPVLb"
                     src={drumMachine}
-                    alt="A React drum machine"
-                    figcaption="Drum Machine"
+                    alt={alts[2]}
+                    figcaption={captions[2]}
                 />
                 <Project
                     href="https://codepen.io/LeSGuerra/pen/WNgjLLN"
                     src={map}
-                    alt="A chloropleth map of the USA"
-                    figcaption="Interactive USA Map"
+                    alt={alts[3]}
+                    figcaption={captions[3]}
                 />
                 <Project
                     href="https://codepen.io/LeSGuerra/pen/VwdPVPd"
                     src={sunset}
-                    alt="A beautiful new retro wave sunset"
-                    figcaption="Pure CSS Art"
+                    alt={alts[4]}
+                    figcaption={captions[4]}
                 />
             </div>
-            <p id="disclaimer">Please note that some of these projects were developed without responsive design considerations and may not display optimally on all devices.</p>
+            <p id="disclaimer">{t("projects.disclaimer")}</p>
             <div className="divider medium"></div>
-            <p>Visit my <a href="https://github.com/S-Guerra">Github</a> & <a href="https://codepen.io/LeSGuerra">Codepen</a> pages for more</p>
-            <p className="transition">or better...</p>
+            <p>{t("projects.links1")}<a href='https: //github.com/S-Guerra'>Github</a> & <a href='https://codepen.io/LeSGuerra'>Codepen</a>{t("projects.links2")}</p>
+            <p className="transition">{t("projects.better")}</p>
         </section >
     )
 }

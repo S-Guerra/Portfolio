@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function Contact() {
     const [userName, setUserName] = useState("");
@@ -6,6 +7,8 @@ function Contact() {
     const [message, setMessage] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
+
+    const { t } = useTranslation();
 
     const sendEmail = async () => {
         await fetch("http://localhost:3001/api/send-email", {
@@ -40,9 +43,9 @@ function Contact() {
     return (
         <section className="page-section" id="contact">
             <div className="form-wrapper">
-                <h2>Hire me! <span className="smaller">(if you dare)</span></h2>
+                <h2>{t("contact.intro")}<span className="smaller">{t("contact.introSmaller")}</span></h2>
                 <form onSubmit={handleSubmit} action="?" method="POST">
-                    <label htmlFor="name">Name</label>
+                    <label htmlFor="name">{t("contact.name")}</label>
                     <input
                         type="text"
                         id="name"
@@ -51,7 +54,7 @@ function Contact() {
                         onChange={(e) => setUserName(e.target.value)}
                         required
                     />
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email">{t("contact.email")}</label>
                     <input
                         type="email"
                         id="email"
@@ -60,7 +63,7 @@ function Contact() {
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                    <label htmlFor="message">Message</label>
+                    <label htmlFor="message">{t("contact.message")}</label>
                     <textarea
                         id="message"
                         name="message"

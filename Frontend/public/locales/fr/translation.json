@@ -1,54 +1,65 @@
 {
     "nav": {
-        "top": "Back to the top",
-        "intro": "Intro",
-        "projects": "Projects",
-        "contact": "Hire me"
+        "top": "Retour au haut de la page",
+        "intro": "Introduction",
+        "projects": "Projets",
+        "contact": "Engagez-moi"
     },
     "header": {
-        "intro": "Hi, I&apos;m ",
-        "job": "A self-taught Web Developer",
-        "discover": "Learn more about me"
+        "intro": "Salut, moi c'est ",
+        "job": "Un développeur web autodidacte",
+        "discover": "Découvrez-en plus sur moi"
     },
     "intro": {
-        "intro": "How I embarked on this journey",
-        "story": "After suffering an injury last year that left me with two broken legs, I decided to use my recovery time to explore a new field: front-end development.<br /><br />With the encouragement and support of a dear friend and my passion for problem-solving, I quickly found front-end development to be a captivating and enjoyable challenge, approaching each problem as a fun and exciting puzzle.<br /><br />I have almost completed my self-taught training and am eager to start working in this fascinating field. I am thrilled to be able to combine my creativity with my technical skills to bring innovative solutions to my future employers.<br />",
-        "skillsTitle": "Skills I have developed through my self-learning journey",
-        "devSkills": "🖥️ Dev skills",
-        "learningSkills": "📚 Learning skills",
+        "intro": "Comment j'ai commencé ce voyage",
+        "storyPart1": "Après avoir subi une blessure en mars 2022 qui m'a laissé avec deux jambes cassées, j'ai décidé de profiter de mon temps de convalescence pour explorer un nouveau domaine : le développement front-end.",
+        "storyPart2": "Grâce à l'encouragement et au soutien de mon entourage et à ma passion pour la résolution de problèmes, je me suis rapidement amusé avec le développement front-end en prenant chaque défi pour un casse-tête amusant et passionnant.",
+        "storyPart3": "Maintenant que j'ai terminé ma formation autodidacte, je suis impatient de commencer à travailler dans ce domaine captivant. Je suis ravi de pouvoir combiner ma créativité avec mes compétences techniques pour apporter des solutions innovantes à mes employeurs.",
+        "skillsTitle": "Compétences que j'ai développé durant mon apprentissage autodidacte",
+        "devSkills": "🖥️ Compétences de développement",
+        "learningSkills": "📚 Compétences d'apprentissage'",
         "learningSkillsList": [
-            "Self-Discipline and Time Management",
-            "Problem-Solving",
-            "Resilience and Perseverance",
-            "Adaptability and Flexibility",
-            "Research Skills",
-            "Critical Thinking",
-            "Retention and Understanding"
+            "Auto-discipline et gestion du temps",
+            "Résolution de problèmes",
+            "Resilience et persévérance",
+            "Adaptation et flexibilité",
+            "Compétences de recherche",
+            "Esprit critique",
+            "Mémorisation et compréhension"
         ]
     },
     "projects": {
-        "intro": "Explore the projects that helped me develop my skills",
-        "order": "From newest to oldest.",
+        "intro": "Explorez les projets qui m'ont permis de développer mes compétences",
+        "order": "Du plus récent au plus ancient",
         "captions": [
             "FryderykGPT",
-            "Casio Calculator",
-            "Drum Machine",
-            "Interactive USA Map",
-            "Pure CSS Art"
+            "Calculette Casio",
+            "Boîte à rythmes",
+            "Carte interactive des États-Unis",
+            "Art en CSS pur"
         ],
-        "disclaimer": "Please note that some of these projects were developed without responsive design considerations and may not display optimally on all devices.",
-        "links": "Visit my <a href='https: //github.com/S-Guerra'>Github</a> & <a href='https://codepen.io/LeSGuerra'>Codepen</a> pages for more",
-        "better": "or better..."
+        "alts": [
+            "Un portrait de Frédéric Chopin",
+            "Une calculette Casio Personal Mini",
+            "Une Boîte à rythmes",
+            "Une carte chloroplèthe des États-Unis",
+            "Un magnifique coucher de soleil New Retro Wave"
+        ],
+        "disclaimer": "Veuillez noter que certains de ces projets ont été développés sans tenir compte de considérations responsives et peuvent ne pas s'afficher de manière optimale sur tous les appareils.",
+        "links1": "Visitez mes pages ",
+        "links2": " pour plus",
+        "better": "ou mieux..."
     },
     "contact": {
-        "intro": "Hire me! <span className='smaller'>(if you dare)</span>",
-        "name": "Name",
+        "intro": "Engagez-moi! ",
+        "introSmaller": "(si vous osez)",
+        "name": "Nom",
         "email": "Email",
         "message": "Message"
     },
     "footer": {
-        "caffeine": "☕ Powered by caffeine",
-        "findMe": "Find me on:",
-        "license": "This Page is subject to the terms of the "
+        "caffeine": "☕ Site énergisé par la caféine",
+        "findMe": "Retrouvez-moi sur:",
+        "license": "Cette page est sujette aux conditions de la "
     }
 }
