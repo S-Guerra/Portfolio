@@ -22,8 +22,10 @@ function Nav() {
             setPrevScrollY(currentScrollY);
         }
 
-        window.addEventListener("scroll", handleScroll)
-    }, [prevScrollY]);
+        window.addEventListener("scroll", handleScroll);
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const toggleMode = useCallback(() => {
         setIsLightMode(prevMode => !prevMode);
@@ -86,9 +88,9 @@ function Nav() {
             <div className="nav-wrapper-wrapper">
                 <div className="nav-wrapper left">
                     <div className={`hamburger ${isHamburgerActive ? "active" : ""}`} onClick={handleHamburger}>
-                        <div className="hamburger-top"></div>
-                        <div className="hamburger-middle"></div>
-                        <div className="hamburger-bottom"></div>
+                        <div className="hamburger-top" />
+                        <div className="hamburger-middle" />
+                        <div className="hamburger-bottom" />
                     </div>
                 </div>
                 <div className="nav-wrapper right">
