@@ -55,7 +55,8 @@
         "introSmaller": "(if you dare)",
         "name": "Name",
         "email": "Email",
-        "message": "Message"
+        "message": "Message",
+        "submit": "Send"
     },
     "footer": {
         "caffeine": "☕ Powered by caffeine",

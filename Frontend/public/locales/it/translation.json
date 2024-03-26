@@ -55,7 +55,8 @@
         "introSmaller": "(se hai il coraggio)",
         "name": "Nome",
         "email": "Email",
-        "message": "Messaggio"
+        "message": "Messaggio",
+        "submit": "Mandare"
     },
     "footer": {
         "caffeine": "☕ Alimentato da caffeina",

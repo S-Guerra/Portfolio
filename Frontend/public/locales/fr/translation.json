@@ -17,7 +17,7 @@
         "storyPart3": "Maintenant que j'ai terminé ma formation autodidacte, je suis impatient de commencer à travailler dans ce domaine captivant. Je suis ravi de pouvoir combiner ma créativité avec mes compétences techniques pour apporter des solutions innovantes à mes employeurs.",
         "skillsTitle": "Compétences que j'ai développé durant mon apprentissage autodidacte",
         "devSkills": "🖥️ Compétences de développement",
-        "learningSkills": "📚 Compétences d'apprentissage'",
+        "learningSkills": "📚 Compétences d'apprentissage",
         "learningSkillsList": [
             "Auto-discipline et gestion du temps",
             "Résolution de problèmes",
@@ -35,7 +35,7 @@
             "FryderykGPT",
             "Calculette Casio",
             "Boîte à rythmes",
-            "Carte interactive des États-Unis",
+            "Carte interactive des USA",
             "Art en CSS pur"
         ],
         "alts": [
@@ -55,7 +55,8 @@
         "introSmaller": "(si vous osez)",
         "name": "Nom",
         "email": "Email",
-        "message": "Message"
+        "message": "Message",
+        "submit": "Envoyer"
     },
     "footer": {
         "caffeine": "☕ Site énergisé par la caféine",
