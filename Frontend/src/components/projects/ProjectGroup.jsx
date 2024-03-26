@@ -1,6 +1,5 @@
-import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
-
+import Project from "./Project.jsx"
 
 import casio from "../../assets/casio.jpg"
 import chopin from "../../assets/chopin.jpg"
@@ -8,26 +7,7 @@ import drumMachine from "../../assets/drum-machine.jpg"
 import map from "../../assets/map.jpg"
 import sunset from "../../assets/sunset.jpg"
 
-function Project({ href, src, alt, figcaption }) {
-    return (
-        <figure className={"project"}>
-            <a href={href}>
-                <div className="project-img-wrapper">
-                    <img src={src} alt={alt} decoding="async" loading="lazy" />
-                </div>
-                <figcaption>{figcaption}</figcaption>
-            </a>
-        </figure>
-    )
-}
-Project.propTypes = {
-    href: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
-    figcaption: PropTypes.string.isRequired
-}
-
-function Projects() {
+function ProjectGroup() {
     const { t } = useTranslation();
     const captions = t("projects.captions");
     const alts = t("projects.alts");
@@ -76,4 +56,4 @@ function Projects() {
     )
 }
 
-export default Projects
+export default ProjectGroup

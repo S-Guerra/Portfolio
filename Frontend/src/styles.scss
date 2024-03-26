@@ -4,10 +4,8 @@
   align-items: center;
 }
 
-// TO DO: create mixin for a scrollbar
 @media (prefers-color-scheme: light) {
   :root {
-    // light theme colors
     --color1: #181b0e;
     --color2: #fbc789;
     --color3: #fefcfb;
@@ -18,7 +16,6 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    // dark theme colors 
     --color1: #fef6eb;
     --color2: #141414;
     --color3: #333333;
@@ -109,8 +106,6 @@ nav {
       cursor: pointer;
     }
 
-    // TO DO: make language selection work
-
     select:hover {
       color: var(--color1);
       background-color: var(--color4);
@@ -125,9 +120,6 @@ nav {
       background-color: var(--color2);
       cursor: pointer;
     }
-
-    // TO DO: make light theme selection work
-    // cookie to remember user choice?
 
     button:hover {
       background-color: var(--color4);
@@ -307,7 +299,6 @@ header {
     justify-content: flex-start;
     flex-flow: row nowrap;
     overflow-x: auto;
-    // scrollbars mixin
 
     .project {
       min-width: 260px;
@@ -421,6 +412,10 @@ header {
         width: 90%;
       }
 
+      label {
+        padding-top: 1vh;
+      }
+
       input,
       textarea {
         font-size: 1em;
@@ -476,8 +471,6 @@ footer {
       fill: var(--color1);
     }
   }
-
-  // TO DO: media query to show stuff horizontally on large screens
 }
 
 // MEDIA QUERIES ////////////////////////////////////////////////////////
@@ -588,5 +581,5 @@ footer {
 // XXX-Large devices =>TO DO: big screens (very very wide and very very tall)
 @media (min-width: 1921px) {}
 
-// TO DO: load img of different sizes depending on screen size => srcset
 // TO DO: arya
+// TO DO: scrollbar
