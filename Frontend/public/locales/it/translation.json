@@ -12,20 +12,20 @@
     },
     "intro": {
         "intro": "Come ho intrapreso questo viaggio",
-        "storyPart1": "Dopo aver subito un infortunio l'anno scorso che mi ha lasciato con due gambe rotte, ho deciso di utilizzare il tempo di recupero per esplorare un nuovo campo: lo sviluppo front-end.",
-        "storyPart2": "Con l'incoraggiamento e il sostegno di un caro amico e la mia passione per la risoluzione dei problemi, ho scoperto rapidamente che lo sviluppo front-end è una sfida affascinante e piacevole, affrontando ogni problema come un rompicapo divertente ed emozionante.",
-        "storyPart3": "Avendo completato la mia formazione autodidatta, non vedo l'ora di iniziare a lavorare in questo affascinante campo. Sono entusiasta di poter unire la mia creatività alle mie competenze tecniche per portare soluzioni innovative ai miei datori di lavoro.",
-        "skillsTitle": "Competenze che ho sviluppato attraverso il mio percorso di autoapprendimento",
+        "storyPart1": "L'anno scorso, dopo aver subito un infortunio che mi ha lasciato con due gambe rotte, ho deciso di utilizzare il periodo di riabilitazione per esplorare un nuovo campo: lo sviluppo front-end.",
+        "storyPart2": "Con l'incoraggiamento e il sostegno di un caro amico e la mia passione per il problem-solving, ho scoperto rapidamente che lo sviluppo front-end è una sfida affascinante e piacevole, affrontando ogni problema come un rompicapo divertente ed emozionante.",
+        "storyPart3": "Avendo completato la mia formazione autodidatta, non vedo l'ora di iniziare a lavorare in questo campo affascinante. Sono entusiasta di poter unire la mia creatività alle mie competenze tecniche per portare soluzioni innovative ai miei datori di lavoro.",
+        "skillsTitle": "Competenze che ho sviluppato attraverso il mio percorso di apprendimento",
         "devSkills": "🖥️ Competenze di sviluppo",
         "learningSkills": "📚 Competenze di apprendimento",
         "learningSkillsList": [
-            "Autodisciplina e Gestione del Tempo",
-            "Risoluzione dei Problemi",
-            "Resilienza e Perseveranza",
-            "Adattabilità e Flessibilità",
-            "Competenze di Ricerca",
-            "Pensiero Critico",
-            "Memorizzazione e Comprensione"
+            "Autodisciplina e gestione del tempo",
+            "Risoluzione dei problemi",
+            "Resilienza e perseveranza",
+            "Adattabilità e flessibilità",
+            "Competenze di ricerca",
+            "Pensiero critico",
+            "Memorizzazione e comprensione"
         ]
     },
     "projects": {
@@ -36,31 +36,31 @@
             "Calcolatrice Casio",
             "Drum Machine",
             "Mappa Interattiva degli USA",
-            "Arte in Pure CSS"
+            "Arte in puro CSS"
         ],
         "alts": [
             "Un ritratto di Fryderyk Chopin",
             "Una calcolatrice personale mini Casio",
-            "Una drum machine React",
+            "Una drum machine",
             "Una mappa cloropletica degli USA",
-            "Un bellissimo tramonto retrò dell'onda nuova"
+            "Un bellissimo tramonto in style New Retro Wave"
         ],
         "disclaimer": "Si prega di notare che alcuni di questi progetti sono stati sviluppati senza considerazioni di design responsivo e potrebbero non essere visualizzati ottimamente su tutti i dispositivi.",
-        "links1": "Visita le mie ",
-        "links2": " pagine per saperne di più",
-        "better": "o meglio..."
+        "links1": "Visita le mie pagine ",
+        "links2": " per saperne di più",
+        "better": "oppure, meglio..."
     },
     "contact": {
         "intro": "Assumimi! ",
-        "introSmaller": "(se hai il coraggio)",
+        "introSmaller": "(se ne hai il coraggio)",
         "name": "Nome",
         "email": "Email",
         "message": "Messaggio",
-        "submit": "Mandare"
+        "submit": "Inviare"
     },
     "footer": {
         "caffeine": "☕ Alimentato da caffeina",
-        "findMe": "Trova me su:",
+        "findMe": "Trovami su:",
         "license": "Questa pagina è soggetta ai termini della "
     }
 }
