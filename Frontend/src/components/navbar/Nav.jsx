@@ -21,11 +21,11 @@ function Nav() {
             setIsNavbarVisible(prevScrollY > currentScrollY || currentScrollY < 10);
             setPrevScrollY(currentScrollY);
         }
-
+        console.log("test")
         window.addEventListener("scroll", handleScroll);
 
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [prevScrollY]);
 
     const toggleMode = useCallback(() => {
         setIsLightMode(prevMode => !prevMode);
@@ -39,14 +39,16 @@ function Nav() {
                 "--color2": "#fbc789",
                 "--color3": "#fefcfb",
                 "--color4": "#f58a07",
-                "--color5": "#feecd8"
+                "--color5": "#feecd8",
+                "--background-img": "var(--light-img)"
             };
             const darkModeColors = {
                 "--color1": "#fef6eb",
                 "--color2": "#141414",
                 "--color3": "#333333",
                 "--color4": "#f58a07",
-                "--color5": "#292929"
+                "--color5": "#292929",
+                "--background-img": "var(--dark-img)"
             };
             const colors = isLightMode ? lightModeColors : darkModeColors;
 

@@ -15,38 +15,40 @@ function ProjectGroup() {
     return (
         <section className="page-section" id="projects">
             <h2>{t("projects.intro")}</h2>
-            <p id="top-info">{t("projects.order")}</p>
-            <div className="projects-wrapper">
-                <Project
-                    href="https://github.com/S-Guerra/FryderykGPT"
-                    src={chopin}
-                    alt={alts[0]}
-                    figcaption={captions[0]}
-                />
-                <Project
-                    href="https://codepen.io/LeSGuerra/pen/eYQyPgj"
-                    src={casio}
-                    alt={alts[1]}
-                    figcaption={captions[1]}
-                />
-                <Project
-                    href="https://codepen.io/LeSGuerra/pen/xxQPVLb"
-                    src={drumMachine}
-                    alt={alts[2]}
-                    figcaption={captions[2]}
-                />
-                <Project
-                    href="https://codepen.io/LeSGuerra/pen/WNgjLLN"
-                    src={map}
-                    alt={alts[3]}
-                    figcaption={captions[3]}
-                />
-                <Project
-                    href="https://codepen.io/LeSGuerra/pen/VwdPVPd"
-                    src={sunset}
-                    alt={alts[4]}
-                    figcaption={captions[4]}
-                />
+            <div className="projects-wrapper-wrapper">
+                <p id="top-info">{t("projects.order")}</p>
+                <div className="projects-wrapper">
+                    <Project
+                        href="https://github.com/S-Guerra/FryderykGPT"
+                        src={chopin}
+                        alt={alts[0]}
+                        figcaption={captions[0]}
+                    />
+                    <Project
+                        href="https://codepen.io/LeSGuerra/pen/eYQyPgj"
+                        src={casio}
+                        alt={alts[1]}
+                        figcaption={captions[1]}
+                    />
+                    <Project
+                        href="https://codepen.io/LeSGuerra/pen/xxQPVLb"
+                        src={drumMachine}
+                        alt={alts[2]}
+                        figcaption={captions[2]}
+                    />
+                    <Project
+                        href="https://codepen.io/LeSGuerra/pen/WNgjLLN"
+                        src={map}
+                        alt={alts[3]}
+                        figcaption={captions[3]}
+                    />
+                    <Project
+                        href="https://codepen.io/LeSGuerra/pen/VwdPVPd"
+                        src={sunset}
+                        alt={alts[4]}
+                        figcaption={captions[4]}
+                    />
+                </div>
             </div>
             <p id="disclaimer">{t("projects.disclaimer")}</p>
             <div className="divider medium"></div>
