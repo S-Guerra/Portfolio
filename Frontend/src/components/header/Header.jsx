@@ -4,7 +4,7 @@ function Header() {
     const { t } = useTranslation();
     return (
         <header className="page-section" id="top">
-            <div></div>
+            <div />
             <div>
                 <h1>{t("header.intro")}<span>Stelio</span></h1>
                 <h2>{t("header.job")}</h2>

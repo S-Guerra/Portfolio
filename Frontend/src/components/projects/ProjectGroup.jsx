@@ -14,7 +14,7 @@ function ProjectGroup() {
 
     return (
         <section className="page-section" id="projects">
-            <h2>{t("projects.intro")}</h2>
+            <h2 className="grey">{t("projects.intro")}</h2>
             <div className="projects-wrapper-wrapper">
                 <p id="top-info">{t("projects.order")}</p>
                 <div className="projects-wrapper">
@@ -50,10 +50,12 @@ function ProjectGroup() {
                     />
                 </div>
             </div>
-            <p id="disclaimer">{t("projects.disclaimer")}</p>
-            <div className="divider medium"></div>
-            <p>{t("projects.links1")}<a href='https: //github.com/S-Guerra'>Github</a> & <a href='https://codepen.io/LeSGuerra'>Codepen</a>{t("projects.links2")}</p>
-            <p className="transition">{t("projects.better")}</p>
+            <div className="grey">
+                <p id="disclaimer">{t("projects.disclaimer")}</p>
+                <div className="divider medium" />
+                <p>{t("projects.links1")}<a href='https: //github.com/S-Guerra'>Github</a> & <a href='https://codepen.io/LeSGuerra'>Codepen</a>{t("projects.links2")}</p>
+                <p className="transition">{t("projects.better")}</p>
+            </div>
         </section >
     )
 }

@@ -183,6 +183,7 @@ nav {
   }
 
   // Full screen nav list /////
+  // TODO: change to dropdown
   .nav-list {
     display: none;
     height: 92vh;
@@ -235,6 +236,11 @@ header {
   }
 
   span {
+    font-family: "Caveat", cursive;
+    font-size: 1.2em;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
     padding: 0 5px;
     background-color: var(--color4);
   }
@@ -252,6 +258,10 @@ header {
     margin: 10vh auto;
     text-align: center;
 
+    .text-wrapper {
+      padding: 5vh 0;
+    }
+
     p {
       margin: 15px;
       text-align: left;
@@ -267,10 +277,28 @@ header {
       margin: 1vh auto;
     }
 
-    #skills-intro {
-      padding: 7vh 0 5vh 0;
+    blockquote {
+      width: 70%;
+      padding: 5vh 0;
+      margin: 0 auto;
+      font-family: "Caveat", cursive;
+      font-size: 2em;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+
+      .quote {
+        text-align: left;
+      }
+
+      .author {
+        text-align: right;
+      }
     }
 
+    #skills-intro {
+      padding: 5vh 0;
+    }
 
     li {
       list-style: none;
@@ -298,14 +326,23 @@ header {
 // PROJECTS ////////////////////////////////////////////////////////
 #projects {
   width: 100%;
-  background-color: var(--color3);
   text-align: center;
 
+  .grey {
+    background-color: var(--color3);
+  }
+
+  h2.grey {
+    padding-bottom: 2vh;
+  }
+
+  div.grey {
+    padding-top: 1vh;
+  }
+
   .projects-wrapper-wrapper {
-    background-image: var(--background-img);
     border-top: 3px solid var(--color1);
     border-bottom: 3px solid var(--color1);
-    margin: 2vh auto 1vh auto;
 
     .projects-wrapper {
       @include flex;
@@ -319,6 +356,7 @@ header {
         min-height: 380px;
         border: 2px solid var(--color1);
         border-radius: 12px;
+        box-shadow: 0px 0px 10px black;
         margin: 15px 15px 5vh 15px;
         overflow: hidden;
 
@@ -370,13 +408,15 @@ header {
   }
 
   #top-info {
-    margin: 2vh 0 0 15px;
+    padding: 1vh 0;
+    margin: 1vh 0 0 15px;
     font-size: 0.9em;
     text-align: left;
   }
 
   p {
-    margin: 2vh auto;
+    padding: 2vh 0;
+    margin: 0 auto;
     text-align: center;
 
     a {

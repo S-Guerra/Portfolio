@@ -74,10 +74,10 @@ function Nav() {
     }
 
     const sections = [
-        { name: "top", description: t("nav.top") },
-        { name: "intro", description: t("nav.intro") },
-        { name: "projects", description: t("nav.projects") },
-        { name: "contact", description: t("nav.contact") }
+        { id: "top", name: t("nav.top") },
+        { id: "intro", name: t("nav.intro") },
+        { id: "projects", name: t("nav.projects") },
+        { id: "contact", name: t("nav.contact") }
     ];
     const languages = [
         { label: "EN", code: "en-US" },
@@ -108,9 +108,9 @@ function Nav() {
                 {sections.map((item, index) => (
                     <li className="nav-list-element" key={index}>
                         <button onClick={() => {
-                            scrollToSection(item.name)
+                            scrollToSection(item.id)
                             handleHamburger()
-                        }}>{item.description}</button>
+                        }}>{item.name}</button>
                     </li>
                 ))}
             </ul>

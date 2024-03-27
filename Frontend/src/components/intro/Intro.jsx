@@ -13,7 +13,12 @@ function Intro() {
                     <h2>{t("intro.intro")}</h2>
                     <p>{t("intro.storyPart1")}<br /><br />{t("intro.storyPart2")}<br /><br />{t("intro.storyPart3")}<br /></p>
                 </div>
-                <div className="divider big"></div>
+                <div className="divider big" />
+                <blockquote>
+                    <p className="quote">{t("intro.quote")}</p>
+                    <p className="author">- Winston Churchill</p>
+                </blockquote>
+                <div className="divider big" />
                 <div className="skills-wrapper">
                     <h3 id="skills-intro">{t("intro.skillsTitle")}</h3>
                     <div className="lists-wrapper">
@@ -34,7 +39,7 @@ function Intro() {
                             </ul>
                         </div>
                     </div>
-                    <div className="divider big"></div>
+                    <div className="divider big" />
                 </div>
             </div>
         </section >
