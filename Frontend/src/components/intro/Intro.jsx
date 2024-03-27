@@ -1,5 +1,7 @@
 import { useTranslation } from "react-i18next";
 
+import churchill from "../../assets/churchill.jpg"
+
 function Intro() {
     const { t } = useTranslation();
 
@@ -13,17 +15,20 @@ function Intro() {
                     <h2>{t("intro.intro")}</h2>
                     <p>{t("intro.storyPart1")}<br /><br />{t("intro.storyPart2")}<br /><br />{t("intro.storyPart3")}<br /></p>
                 </div>
-                <div className="divider big" />
+                <div className="divider medium" />
                 <blockquote>
                     <p className="quote">{t("intro.quote")}</p>
-                    <p className="author">- Winston Churchill</p>
+                    <div>
+                        <p className="author">- Winston Churchill</p>
+                        <img className="picture" src={churchill} alt={t("intro.picture")} />
+                    </div>
                 </blockquote>
                 <div className="divider big" />
                 <div className="skills-wrapper">
                     <h3 id="skills-intro">{t("intro.skillsTitle")}</h3>
                     <div className="lists-wrapper">
                         <div className="list">
-                            <h3>{t("intro.devSkills")}</h3>
+                            <h3 className="skills-title">{t("intro.devSkills")}</h3>
                             <ul>
                                 {devSkills.map((item, index) => (
                                     <li key={index}>{item}</li>
@@ -31,7 +36,7 @@ function Intro() {
                             </ul>
                         </div>
                         <div className="list">
-                            <h3>{t("intro.learningSkills")}</h3>
+                            <h3 className="skills-title">{t("intro.learningSkills")}</h3>
                             <ul>
                                 {learningSkills.map((item, index) => (
                                     <li key={index}>{item}</li>

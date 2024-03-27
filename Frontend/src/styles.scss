@@ -6,7 +6,7 @@
 
 :root {
   --light-img: url("./assets/paper-50vw.jpg");
-  --dark-img: url("./assets/carbon-50vw.jpg")
+  --dark-img: url("./assets/carbon-50vw.jpg");
 }
 
 @media (prefers-color-scheme: light) {
@@ -53,6 +53,7 @@ html {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
   background-image: var(--background-img);
+  background-color: var(--color5);
   background-attachment: fixed;
 }
 
@@ -241,8 +242,9 @@ header {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    padding: 0 5px;
+    padding: 0 7px 0 0;
     background-color: var(--color4);
+    box-shadow: 0 0 12px var(--color3);
   }
 }
 
@@ -291,8 +293,21 @@ header {
         text-align: left;
       }
 
-      .author {
-        text-align: right;
+      div {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .author {
+          display: inline-block;
+          margin-right: 1em;
+        }
+
+        .picture {
+          display: inline-block;
+          width: 2em;
+          border: 3px solid black;
+        }
       }
     }
 
@@ -314,10 +329,17 @@ header {
 
       .list {
         width: 90vw;
-        padding: 1vh 1vw;
+        padding-bottom: 1vh;
         border: 3px solid var(--color1);
         margin: 3vh auto;
         background-color: var(--color5);
+
+        .skills-title {
+          padding: 1vh 1vw;
+          border-bottom: 1px solid var(--color1);
+          margin: 0;
+          background-color: var(--color4);
+        }
       }
     }
   }

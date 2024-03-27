@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 // CORS middleware
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Origin", "*"); // !!! TODO: change to domain name to prevent CSRF attacks
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
@@ -36,7 +36,7 @@ app.post("/api/send-email", (req, res) => {
     // Email content
     let mailOptions = {
         from: `${name}: ${email}`,
-        to: "sguerra.dev@gmail.com",
+        to: `${process.env.EMAIL}`,
         subject: "New message from portfolio contact form",
         text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
