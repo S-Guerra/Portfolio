@@ -43,11 +43,11 @@ function Nav() {
                 "--background-img": "var(--light-img)"
             };
             const darkModeColors = {
-                "--color1": "#fef6eb",
-                "--color2": "#141414",
-                "--color3": "#333333",
+                "--color1": "#fefcfb",
+                "--color2": "#131317",
+                "--color3": "#292A2F",
                 "--color4": "#f58a07",
-                "--color5": "#292929",
+                "--color5": "#202025",
                 "--background-img": "var(--dark-img)"
             };
             const colors = isLightMode ? lightModeColors : darkModeColors;
@@ -60,7 +60,7 @@ function Nav() {
     }, [isLightMode, toggleMode]);
 
     const handleHamburger = () => {
-        document.body.style.overflow = isHamburgerActive ? "auto" : "hidden";
+        // document.body.style.overflow = isHamburgerActive ? "auto" : "hidden";
         setIsHamburgerActive(!isHamburgerActive);
     }
 
@@ -106,11 +106,11 @@ function Nav() {
             </div>
             <ul className={`nav-list ${isHamburgerActive ? "active" : ""}`}>
                 {sections.map((item, index) => (
-                    <li className="nav-list-element" key={index}>
-                        <button onClick={() => {
-                            scrollToSection(item.id)
-                            handleHamburger()
-                        }}>{item.name}</button>
+                    <li className={`nav-list-element ${index % 2 === 0 ? "" : "odd"}`} key={index} onClick={() => {
+                        scrollToSection(item.id)
+                        handleHamburger()
+                    }}>
+                        {item.name}
                     </li>
                 ))}
             </ul>

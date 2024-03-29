@@ -20,7 +20,7 @@ function Intro() {
                     <p className="quote">{t("intro.quote")}</p>
                     <div>
                         <p className="author">- Winston Churchill</p>
-                        <img className="picture" src={churchill} alt={t("intro.picture")} />
+                        <img className="picture" src={churchill} alt={t("intro.picture")} decoding="async" loading="lazy" />
                     </div>
                 </blockquote>
                 <div className="divider big" />
@@ -31,7 +31,7 @@ function Intro() {
                             <h3 className="skills-title">{t("intro.devSkills")}</h3>
                             <ul>
                                 {devSkills.map((item, index) => (
-                                    <li key={index}>{item}</li>
+                                    <li className={`${index % 2 === 0 ? "" : "odd"}`} key={index}>{item}</li>
                                 ))}
                             </ul>
                         </div>
@@ -39,7 +39,7 @@ function Intro() {
                             <h3 className="skills-title">{t("intro.learningSkills")}</h3>
                             <ul>
                                 {learningSkills.map((item, index) => (
-                                    <li key={index}>{item}</li>
+                                    <li className={`${index % 2 === 0 ? "" : "odd"}`} key={index}>{item}</li>
                                 ))}
                             </ul>
                         </div>

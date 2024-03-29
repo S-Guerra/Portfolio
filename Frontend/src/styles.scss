@@ -22,11 +22,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color1: #fef6eb;
-    --color2: #141414;
-    --color3: #333333;
+    --color1: #fefcfb;
+    --color2: #131317;
+    --color3: #292A2F;
     --color4: #f58a07;
-    --color5: #292929;
+    --color5: #202025;
     --background-img: var(--dark-img);
   }
 }
@@ -96,6 +96,7 @@ nav {
     flex-direction: row;
     height: 68px;
     border-bottom: 3px solid var(--color1);
+    box-shadow: 0 3px 10px black;
     color: var(--color3);
   }
 
@@ -187,32 +188,34 @@ nav {
   // TODO: change to dropdown
   .nav-list {
     display: none;
-    height: 92vh;
-    background-color: var(--color3);
     list-style: none;
 
     li {
-      button {
-        width: 100vw;
-        min-height: 7vh;
-        padding: 5px;
-        text-align: center;
-        font-weight: 700;
-        background-color: var(--color3);
-        cursor: pointer;
-      }
+      width: 100vw;
+      height: 2em;
+      padding: 5px;
+      text-align: center;
+      font-size: 1em;
+      font-weight: 600;
+      background-color: var(--color2);
+      cursor: pointer;
+    }
 
-      button:hover {
-        color: var(--color5);
-        background-color: var(--color1);
-      }
+    li.odd {
+      background-color: (var(--color5));
+    }
+
+    li:hover {
+      color: var(--color5);
+      background-color: var(--color1);
     }
   }
 
   .nav-list.active {
-    @include flex;
-    justify-content: space-around;
-    flex-direction: column;
+    display: block;
+    // @include flex;
+    // justify-content: flex-start;
+    // flex-direction: column;
   }
 
   svg {
@@ -271,7 +274,7 @@ header {
 
     h2 {
       text-align: left;
-      text-indent: 15px;
+      padding: 0 15px;
     }
 
     h2,
@@ -307,6 +310,7 @@ header {
           display: inline-block;
           width: 2em;
           border: 3px solid black;
+          box-shadow: 0 0 10px black;
         }
       }
     }
@@ -329,8 +333,8 @@ header {
 
       .list {
         width: 90vw;
-        padding-bottom: 1vh;
         border: 3px solid var(--color1);
+        box-shadow: 0 0 10px black;
         margin: 3vh auto;
         background-color: var(--color5);
 
@@ -339,6 +343,10 @@ header {
           border-bottom: 1px solid var(--color1);
           margin: 0;
           background-color: var(--color4);
+        }
+
+        .odd {
+          background-color: var(--color2);
         }
       }
     }
@@ -378,7 +386,7 @@ header {
         min-height: 380px;
         border: 2px solid var(--color1);
         border-radius: 12px;
-        box-shadow: 0px 0px 10px black;
+        box-shadow: 0 0 10px black;
         margin: 15px 15px 5vh 15px;
         overflow: hidden;
 
@@ -412,8 +420,11 @@ header {
       }
 
       .project:hover {
+        transform: scale(1.05);
+        transition: 0.4s ease-in;
+
         img {
-          transform: scale(1.1);
+          transform: scale(1.05);
           transition: 0.4s ease-in;
         }
 
@@ -483,6 +494,7 @@ header {
       flex-direction: column;
       padding: 1vh 1vw;
       border: 3px solid var(--color1);
+      box-shadow: 0 0 4px black;
       background-color: var(--color5);
 
       * {
@@ -546,6 +558,10 @@ footer {
       height: auto;
       margin: 1vh 1vw;
       fill: var(--color1);
+    }
+
+    .ref-logo:hover {
+      transform: scale(1.2);
     }
   }
 }
