@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import churchill from "../../assets/churchill.jpg"
+import churchill from "./assets/churchill.jpg"
 
 function Intro() {
     const { t } = useTranslation();

@@ -1,11 +1,10 @@
 import { useTranslation } from "react-i18next";
 import Project from "./Project.jsx"
-
-import casio from "../../assets/casio.jpg"
-import chopin from "../../assets/chopin.jpg"
-import drumMachine from "../../assets/drum-machine.jpg"
-import map from "../../assets/map.jpg"
-import sunset from "../../assets/sunset.jpg"
+import casio from "./assets/casio.jpg"
+import chopin from "./assets/chopin.jpg"
+import drumMachine from "./assets/drum-machine.jpg"
+import map from "./assets/map.jpg"
+import sunset from "./assets/sunset.jpg"
 
 function ProjectGroup() {
     const { t } = useTranslation();

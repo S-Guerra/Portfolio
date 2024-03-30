@@ -95,8 +95,6 @@ nav {
     justify-content: space-between;
     flex-direction: row;
     height: 68px;
-    border-bottom: 3px solid var(--color1);
-    box-shadow: 0 3px 10px black;
     color: var(--color3);
   }
 
@@ -136,11 +134,10 @@ nav {
       border: 1px solid var(--color1);
     }
 
-    svg {
+    .svg {
       width: 50px;
       height: 50px;
       padding: 8px;
-      fill: var(--color1);
     }
   }
 
@@ -218,10 +215,14 @@ nav {
     // flex-direction: column;
   }
 
-  svg {
-    fill: black;
+  .border {
+    width: 100%;
+    border-bottom: 3px solid var(--color1);
+    box-shadow: 0 3px 10px black;
   }
 }
+
+
 
 // HEADER ////////////////////////////////////////////////////////
 header {
