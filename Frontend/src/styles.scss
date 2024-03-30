@@ -97,46 +97,66 @@ nav {
 
     .nav-wrapper {
       padding: 7px;
-    }
 
-    .nav-wrapper.right {
-      @include flex;
+      &.right {
+        @include flex;
 
-      select {
-        height: 50px;
-        padding: 3px 12px;
-        border: 1px solid var(--color1);
-        margin: 2px;
-        background-color: var(--color2);
-        cursor: pointer;
-
-        &:hover {
-          color: var(--color1);
-          background-color: var(--color4);
+        select {
+          height: 50px;
+          padding: 3px 12px;
           border: 1px solid var(--color1);
-        }
-      }
+          margin: 2px;
+          background-color: var(--color2);
+          cursor: pointer;
 
-      button {
-        width: 50px;
-        height: 50px;
-        border: 1px solid var(--color1);
-        margin: 2px;
-        background-color: var(--color2);
-        cursor: pointer;
-
-        &:hover {
-          background-color: var(--color4);
-          border: 1px solid var(--color1);
+          &:hover {
+            color: var(--color1);
+            background-color: var(--color4);
+            border: 1px solid var(--color1);
+          }
         }
 
-        .svg {
+        button {
           width: 50px;
           height: 50px;
-          padding: 8px;
+          border: 1px solid var(--color1);
+          margin: 2px;
+          background-color: var(--color2);
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--color4);
+            border: 1px solid var(--color1);
+          }
+
+          .svg {
+            width: 50px;
+            height: 50px;
+            padding: 8px;
+          }
+        }
+      }
+
+      &.left {
+        @include flex;
+
+        .logo {
+          width: 50px;
+          height: 50px;
+          margin: 2px;
+          background-color: #fefcfb;
+          border: 1px solid var(--color1);
+          text-align: center;
+
+          img {
+            height: 50px;
+            padding: 4px;
+          }
         }
       }
     }
+
+
   }
 
   // Custom hamburger button /////
@@ -146,6 +166,7 @@ nav {
     flex-direction: column;
     width: 50px;
     height: 50px;
+    margin: 2px;
     cursor: pointer;
 
     &.active .hamburger-top {

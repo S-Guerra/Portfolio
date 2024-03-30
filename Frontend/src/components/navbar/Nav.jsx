@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import moonSVG from "./assets/moon.svg";
 import sunSVG from "./assets/sun.svg";
-// import logo from "./assets/logo.svg"
+import logo from "./assets/logo.svg"
 
 function Nav() {
     const { t, i18n } = useTranslation();
@@ -88,11 +88,13 @@ function Nav() {
         <nav className={`page-section ${isNavbarVisible ? "active" : ""}`}>
             <div className="nav-wrapper-wrapper">
                 <div className="nav-wrapper left">
-                    {/* <img className="svg" src={logo} /> */}
                     <div className={`hamburger ${isHamburgerActive ? "active" : ""}`} onClick={handleHamburger}>
                         <div className="hamburger-top" />
                         <div className="hamburger-middle" />
                         <div className="hamburger-bottom" />
+                    </div>
+                    <div className="logo">
+                        <img className="svg" src={logo} />
                     </div>
                 </div>
                 <div className="nav-wrapper right">
