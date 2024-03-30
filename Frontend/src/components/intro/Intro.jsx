@@ -39,7 +39,7 @@ function Intro() {
                             <h3 className="skills-title">{t("intro.learningSkills")}</h3>
                             <ul>
                                 {learningSkills.map((item, index) => (
-                                    <li className={`${index % 2 === 0 ? "" : "odd"}`} key={index}>{item}</li>
+                                    <li key={index}>{item}</li>
                                 ))}
                             </ul>
                         </div>

@@ -17,6 +17,7 @@ function Nav() {
     useEffect(() => {
         function handleScroll() {
             const currentScrollY = window.scrollY;
+            setIsHamburgerActive(false);
             setIsNavbarVisible(prevScrollY > currentScrollY || currentScrollY < 10);
             setPrevScrollY(currentScrollY);
         }
@@ -87,6 +88,7 @@ function Nav() {
         <nav className={`page-section ${isNavbarVisible ? "active" : ""}`}>
             <div className="nav-wrapper-wrapper">
                 <div className="nav-wrapper left">
+                    {/* <img className="svg" src={logo} /> */}
                     <div className={`hamburger ${isHamburgerActive ? "active" : ""}`} onClick={handleHamburger}>
                         <div className="hamburger-top" />
                         <div className="hamburger-middle" />
@@ -103,10 +105,10 @@ function Nav() {
                     <button id="light-switch" onClick={toggleMode}><img className="svg" src={isLightMode ? moonSVG : sunSVG} /></button>
                 </div>
             </div>
-            <div>
+            <div className="nav-list-wrapper">
                 <ul className={`nav-list ${isHamburgerActive ? "active" : ""}`}>
                     {sections.map((item, index) => (
-                        <li className={`nav-list-element ${index % 2 === 0 ? "" : "odd"}`} key={index} onClick={() => {
+                        <li className="nav-list-element" key={index} onClick={() => {
                             scrollToSection(item.id)
                             handleHamburger()
                         }}>
@@ -115,7 +117,6 @@ function Nav() {
                     ))}
                 </ul>
             </div>
-            <div className="border" />
         </nav>
     );
 }

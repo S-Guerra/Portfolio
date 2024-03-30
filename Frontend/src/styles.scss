@@ -61,34 +61,30 @@ html {
   height: 1px;
   margin: 1vh auto;
   background-color: var(--color1);
-}
 
-.divider.big {
-  width: 90%;
-}
+  &.medium {
+    width: 50%;
+  }
 
-.divider.medium {
-  width: 50%;
-}
-
-.divider.vertical {
-  display: none;
+  &.big {
+    width: 90%;
+  }
 }
 
 // NAV ////////////////////////////////////////////////////////
-nav.active {
-  top: 0;
-}
-
 nav {
   position: fixed;
-  top: -68px;
+  top: -71px;
   width: 100%;
   height: auto;
   z-index: 3;
   background-color: var(--color5);
   transition: top 0.4s;
+  border-bottom: 3px solid var(--color1);
 
+  &.active {
+    top: 0;
+  }
 
   .nav-wrapper-wrapper {
     @include flex;
@@ -96,48 +92,50 @@ nav {
     flex-direction: row;
     height: 68px;
     color: var(--color3);
-  }
+    background-color: var(--color5);
 
-  .nav-wrapper {
-    padding: 7px;
-  }
 
-  .nav-wrapper.right {
-    @include flex;
-
-    select {
-      height: 50px;
-      padding: 3px 12px;
-      border: 1px solid var(--color1);
-      margin: 2px;
-      background-color: var(--color2);
-      cursor: pointer;
+    .nav-wrapper {
+      padding: 7px;
     }
 
-    select:hover {
-      color: var(--color1);
-      background-color: var(--color4);
-      border: 1px solid var(--color1);
-    }
+    .nav-wrapper.right {
+      @include flex;
 
-    button {
-      width: 50px;
-      height: 50px;
-      border: 1px solid var(--color1);
-      margin: 2px;
-      background-color: var(--color2);
-      cursor: pointer;
-    }
+      select {
+        height: 50px;
+        padding: 3px 12px;
+        border: 1px solid var(--color1);
+        margin: 2px;
+        background-color: var(--color2);
+        cursor: pointer;
 
-    button:hover {
-      background-color: var(--color4);
-      border: 1px solid var(--color1);
-    }
+        &:hover {
+          color: var(--color1);
+          background-color: var(--color4);
+          border: 1px solid var(--color1);
+        }
+      }
 
-    .svg {
-      width: 50px;
-      height: 50px;
-      padding: 8px;
+      button {
+        width: 50px;
+        height: 50px;
+        border: 1px solid var(--color1);
+        margin: 2px;
+        background-color: var(--color2);
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--color4);
+          border: 1px solid var(--color1);
+        }
+
+        .svg {
+          width: 50px;
+          height: 50px;
+          padding: 8px;
+        }
+      }
     }
   }
 
@@ -149,6 +147,23 @@ nav {
     width: 50px;
     height: 50px;
     cursor: pointer;
+
+    &.active .hamburger-top {
+      transform: translate3d(0px, 16px, 0px) scale3d(1, 1, 1) rotateZ(45deg);
+      transform-style: preserve-3d;
+      transition: 0.4s ease;
+    }
+
+    &.active .hamburger-middle {
+      opacity: 0;
+      transition: 0.4s ease;
+    }
+
+    &.active .hamburger-bottom {
+      transform: translate3d(0px, -16px, 0px) scale3d(1, 1, 1) rotateZ(-45deg);
+      transform-style: preserve-3d;
+      transition: 0.4s ease;
+    }
   }
 
   .hamburger-middle {
@@ -164,65 +179,47 @@ nav {
     transition: 0.4s ease;
   }
 
-  .hamburger.active .hamburger-top {
-    transform: translate3d(0px, 16px, 0px) scale3d(1, 1, 1) rotateZ(45deg);
-    transform-style: preserve-3d;
-    transition: 0.4s ease;
-  }
+  // dropdown nav list /////
+  .nav-list-wrapper {
+    position: relative;
 
-  .hamburger.active .hamburger-middle {
-    opacity: 0;
-    transition: 0.4s ease;
-  }
+    .nav-list {
+      position: absolute;
+      top: -8em;
+      z-index: -1;
+      width: 100%;
+      border-bottom: 3px solid var(--color1);
+      box-shadow: 0 3px 10px black;
+      list-style: none;
+      transition: top 0.4s ease;
 
-  .hamburger.active .hamburger-bottom {
-    transform: translate3d(0px, -16px, 0px) scale3d(1, 1, 1) rotateZ(-45deg);
-    transform-style: preserve-3d;
-    transition: 0.4s ease;
-  }
+      &.active {
+        top: 0;
+        transition: top 0.4s ease;
+      }
 
-  // Full screen nav list /////
-  // TODO: change to dropdown
-  .nav-list {
-    display: none;
-    list-style: none;
+      li {
+        height: 2em;
+        padding: 5px;
+        text-align: center;
+        font-size: 1em;
+        font-weight: 600;
+        background-color: var(--color2);
+        cursor: pointer;
+        transition: background-color 0.4s ease;
 
-    li {
-      width: 100vw;
-      height: 2em;
-      padding: 5px;
-      text-align: center;
-      font-size: 1em;
-      font-weight: 600;
-      background-color: var(--color2);
-      cursor: pointer;
+        &:nth-child(even) {
+          background-color: var(--color5);
+        }
+
+        &:hover {
+          color: var(--color5);
+          background-color: var(--color1);
+        }
+      }
     }
-
-    li.odd {
-      background-color: (var(--color5));
-    }
-
-    li:hover {
-      color: var(--color5);
-      background-color: var(--color1);
-    }
-  }
-
-  .nav-list.active {
-    display: block;
-    // @include flex;
-    // justify-content: flex-start;
-    // flex-direction: column;
-  }
-
-  .border {
-    width: 100%;
-    border-bottom: 3px solid var(--color1);
-    box-shadow: 0 3px 10px black;
   }
 }
-
-
 
 // HEADER ////////////////////////////////////////////////////////
 header {
@@ -320,11 +317,6 @@ header {
       padding: 5vh 0;
     }
 
-    li {
-      list-style: none;
-      line-height: 2em;
-    }
-
     .lists-wrapper {
       width: 100%;
       display: flex;
@@ -346,8 +338,13 @@ header {
           background-color: var(--color4);
         }
 
-        .odd {
-          background-color: var(--color2);
+        li {
+          list-style: none;
+          line-height: 2em;
+
+          &:nth-child(odd) {
+            background-color: var(--color2);
+          }
         }
       }
     }
@@ -418,19 +415,19 @@ header {
             background-color: var(--color2);
           }
         }
-      }
 
-      .project:hover {
-        transform: scale(1.05);
-        transition: 0.4s ease-in;
-
-        img {
+        &:hover {
           transform: scale(1.05);
           transition: 0.4s ease-in;
-        }
 
-        figcaption {
-          background-color: var(--color4);
+          img {
+            transform: scale(1.05);
+            transition: 0.4s ease-in;
+          }
+
+          figcaption {
+            background-color: var(--color4);
+          }
         }
       }
     }
@@ -524,11 +521,11 @@ header {
         margin: 1vh 1vw;
         background-color: var(--color4);
         cursor: pointer;
-      }
 
-      .submit:hover {
-        color: var(--color1);
-        background-color: var(--color2);
+        &:hover {
+          color: var(--color1);
+          background-color: var(--color2);
+        }
       }
     }
   }
@@ -559,10 +556,10 @@ footer {
       height: auto;
       margin: 1vh 1vw;
       fill: var(--color1);
-    }
 
-    .ref-logo:hover {
-      transform: scale(1.2);
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
 }
@@ -677,6 +674,3 @@ footer {
 
 // XXX-Large devices =>TO DO: big screens (very very wide and very very tall)
 @media (min-width: 1921px) {}
-
-// TO DO: arya
-// TO DO: scrollbar
