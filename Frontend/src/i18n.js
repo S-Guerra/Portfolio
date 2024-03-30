@@ -8,7 +8,6 @@ i18n
     .use(LanguageDetector)
     .use(Backend)
     .init({
-        debug: true, // to remove for production
         fallbackLng: 'en',
         returnObjects: true
     });

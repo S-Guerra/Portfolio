@@ -21,7 +21,6 @@ function Nav() {
             setIsNavbarVisible(prevScrollY > currentScrollY || currentScrollY < 10);
             setPrevScrollY(currentScrollY);
         }
-        console.log("test")
         window.addEventListener("scroll", handleScroll);
 
         return () => window.removeEventListener("scroll", handleScroll);

@@ -220,11 +220,10 @@ nav {
       }
 
       li {
-        height: 2em;
+        height: 1.8em;
         padding: 5px;
         text-align: center;
-        font-size: 1em;
-        font-weight: 600;
+        // font-size: 1em;
         background-color: var(--color2);
         cursor: pointer;
         transition: background-color 0.4s ease;
@@ -256,9 +255,16 @@ header {
   h1,
   h2 {
     margin: 15vh 0;
+    animation: breath 10s ease 1.5s infinite;
+  }
+
+  h2 {
+    overflow: hidden;
+    text-wrap: nowrap;
   }
 
   span {
+    display: inline-block;
     font-family: "Caveat", cursive;
     font-size: 1.2em;
     font-optical-sizing: auto;
@@ -267,6 +273,31 @@ header {
     padding: 0 7px 0 0;
     background-color: var(--color4);
     box-shadow: 0 0 12px var(--color3);
+    animation: open 1.5s ease-in-out;
+  }
+}
+
+@keyframes open {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 92px;
+  }
+}
+
+@keyframes breath {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
 

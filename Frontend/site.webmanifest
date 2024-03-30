@@ -1,0 +1,20 @@
+{
+    "name": "Stelio Guerra | Web Development",
+    "short_name": "S. Guerra | Web Dev",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fefcfb",
+    "description": "Welcome to my web development portfolio! I'm a passionate web developer specializing in front-end technologies. Explore my projects to see how I combine creativity and technical expertise to create engaging and functional websites and web applications. From responsive designs to optimized code, I strive to deliver exceptional user experiences. Let's collaborate and bring your ideas to life!",
+    "icons": [
+        {
+            "src": "/192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}

@@ -1,7 +1,7 @@
 {
-  "name": "portfolio",
+  "name": "s-guerra-portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "My web development portfolio where I combine creativity and technical expertise to create an engaging and functional website",
   "type": "module",
   "scripts": {
     "dev": "vite",
