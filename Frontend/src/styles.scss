@@ -74,9 +74,8 @@ html {
 // NAV ////////////////////////////////////////////////////////
 nav {
   position: fixed;
-  top: -71px;
+  top: -62px;
   width: 100%;
-  height: auto;
   z-index: 3;
   background-color: var(--color5);
   transition: top 0.4s;
@@ -90,7 +89,7 @@ nav {
     @include flex;
     justify-content: space-between;
     flex-direction: row;
-    height: 68px;
+    height: 59px;
     color: var(--color3);
     background-color: var(--color5);
 
@@ -132,13 +131,54 @@ nav {
           .svg {
             width: 50px;
             height: 50px;
-            padding: 8px;
+            padding: 7px;
           }
         }
       }
 
       &.left {
         @include flex;
+
+        // Custom hamburger button /////
+        .hamburger {
+          @include flex;
+          justify-content: center;
+          flex-direction: column;
+          width: 50px;
+          height: 50px;
+          margin: 2px;
+          cursor: pointer;
+
+          &.active .hamburger-top {
+            transform: translate3d(0px, 16px, 0px) scale3d(1, 1, 1) rotateZ(45deg);
+            transform-style: preserve-3d;
+            transition: 0.4s ease;
+          }
+
+          &.active .hamburger-middle {
+            opacity: 0;
+            transition: 0.4s ease;
+          }
+
+          &.active .hamburger-bottom {
+            transform: translate3d(0px, -16px, 0px) scale3d(1, 1, 1) rotateZ(-45deg);
+            transform-style: preserve-3d;
+            transition: 0.4s ease;
+          }
+        }
+
+        .hamburger-middle {
+          margin: 15px 0;
+        }
+
+        .hamburger-top,
+        .hamburger-middle,
+        .hamburger-bottom {
+          width: 50px;
+          height: 1px;
+          background-color: var(--color1);
+          transition: 0.4s ease;
+        }
 
         .logo {
           width: 50px;
@@ -150,55 +190,14 @@ nav {
 
           img {
             height: 50px;
-            padding: 4px;
+            padding: 3px;
           }
         }
       }
     }
-
-
   }
 
-  // Custom hamburger button /////
-  .hamburger {
-    @include flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 50px;
-    height: 50px;
-    margin: 2px;
-    cursor: pointer;
 
-    &.active .hamburger-top {
-      transform: translate3d(0px, 16px, 0px) scale3d(1, 1, 1) rotateZ(45deg);
-      transform-style: preserve-3d;
-      transition: 0.4s ease;
-    }
-
-    &.active .hamburger-middle {
-      opacity: 0;
-      transition: 0.4s ease;
-    }
-
-    &.active .hamburger-bottom {
-      transform: translate3d(0px, -16px, 0px) scale3d(1, 1, 1) rotateZ(-45deg);
-      transform-style: preserve-3d;
-      transition: 0.4s ease;
-    }
-  }
-
-  .hamburger-middle {
-    margin: 15px 0;
-  }
-
-  .hamburger-top,
-  .hamburger-middle,
-  .hamburger-bottom {
-    width: 50px;
-    height: 1px;
-    background-color: var(--color1);
-    transition: 0.4s ease;
-  }
 
   // dropdown nav list /////
   .nav-list-wrapper {
@@ -206,7 +205,7 @@ nav {
 
     .nav-list {
       position: absolute;
-      top: -8em;
+      top: -7.2em;
       z-index: -1;
       width: 100%;
       border-bottom: 3px solid var(--color1);
@@ -223,7 +222,6 @@ nav {
         height: 1.8em;
         padding: 5px;
         text-align: center;
-        // font-size: 1em;
         background-color: var(--color2);
         cursor: pointer;
         transition: background-color 0.4s ease;
@@ -258,11 +256,6 @@ header {
     animation: breath 10s ease 1.5s infinite;
   }
 
-  h2 {
-    overflow: hidden;
-    text-wrap: nowrap;
-  }
-
   span {
     display: inline-block;
     font-family: "Caveat", cursive;
@@ -293,7 +286,7 @@ header {
   }
 
   50% {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   100% {
@@ -323,8 +316,8 @@ header {
     }
 
     h2 {
-      text-align: left;
       padding: 0 15px;
+      text-align: left;
     }
 
     h2,
@@ -370,17 +363,15 @@ header {
     }
 
     .lists-wrapper {
-      width: 100%;
-      display: flex;
-      align-items: center;
+      @include flex;
       flex-flow: column nowrap;
+      width: 100%;
       padding-bottom: 7vh;
 
       .list {
         width: 90vw;
         border: 3px solid var(--color1);
         box-shadow: 0 0 10px black;
-        margin: 3vh auto;
         background-color: var(--color5);
 
         .skills-title {
@@ -455,7 +446,7 @@ header {
             height: 100%;
             object-position: center;
             object-fit: cover;
-            filter: saturate(150%);
+            filter: saturate(130%);
           }
 
           figcaption {
@@ -492,7 +483,7 @@ header {
 
   #top-info {
     padding: 1vh 0;
-    margin: 1vh 0 0 15px;
+    margin: 1vh 0 0 1vw;
     font-size: 0.9em;
     text-align: left;
   }
@@ -557,13 +548,13 @@ header {
 
       input,
       textarea {
-        font-size: 1em;
-        line-height: 1.2em;
-        word-wrap: break-word;
         padding: 3px;
         border: 1px solid var(--color1);
         color: #141414;
         background-color: white;
+        font-size: 1em;
+        line-height: 1.2em;
+        word-wrap: break-word;
         resize: none;
       }
 
@@ -586,8 +577,8 @@ header {
 // FOOTER ////////////////////////////////////////////////////////
 footer {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  flex-direction: column;
   width: 100%;
   padding: 3vh 3vw;
   background-color: var(--color2);
@@ -617,7 +608,6 @@ footer {
 }
 
 // MEDIA QUERIES ////////////////////////////////////////////////////////
-// X-Small devices (portrait phones, less than 576px)
 // Small devices (landscape phones, 576px and up) => TO DO: landscape phones (very wide, not very tall)
 @media (min-width: 576px) {}
 
@@ -625,7 +615,20 @@ footer {
 @media (min-width: 768px) {
 
   // INTRO /////
-  // TODO: fix flex
+  @keyframes breath {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
   #intro {
     .intro-content-wrapper {
       .lists-wrapper {
@@ -724,5 +727,5 @@ footer {
   }
 }
 
-// XXX-Large devices =>TO DO: big screens (very very wide and very very tall)
+// XXX-Large devices => TO DO: big screens (very very wide and very very tall)
 @media (min-width: 1921px) {}
