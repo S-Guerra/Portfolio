@@ -22,19 +22,25 @@ function Contact() {
                 message: message,
             })
         }).then(res => {
-            if (!res.ok) throw new Error("Network response was not ok...");
+            if (!res.ok) {
+                throw new Error(`Network response was not ok... ${res.message}`);
+            } else {
+                setSuccessMessage("Email sent successfully");
+            }
         }).then(data => {
             console.log(data);
         }).catch(err => {
             console.error(`Error while processing email: ${err}`);
+            setErrorMessage("Error while processing email");
         })
     }
+
+    // TODO input validation function
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             await sendEmail();
-            setSuccessMessage("Email sent successfully");
         } catch (err) {
             setErrorMessage(`Error while processing email: ${err.message}`);
         }
