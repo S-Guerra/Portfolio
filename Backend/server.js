@@ -1,15 +1,16 @@
-require("dotenv").config();
-const express = require("express");
-const nodemailer = require("nodemailer");
-const bodyParser = require("body-parser");
-
+"use strict";
+import "dotenv/config"
+import express from "express";
+import { createTransport } from "nodemailer";
+import { urlencoded, json } from "body-parser";
+import helmet from "helmet";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Body parser middleware
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(urlencoded({ extended: false }));
+app.use(json());
 
 // CORS middleware
 app.use((req, res, next) => {
@@ -18,12 +19,17 @@ app.use((req, res, next) => {
     next();
 });
 
+// helmet.js protection
+app.use(helmet({
+    xDnsPrefetchControl: true,
+}));
+
 // POST route for handling form submissions
 app.post("/api/send-email", (req, res) => {
     const { name, email, message } = req.body;
 
     // Create a Nodemailer transporter using SMTP transport
-    let transporter = nodemailer.createTransport({
+    let transporter = createTransport({
         host: "smtp.gmail.com",
         port: 587,
         secure: false,
