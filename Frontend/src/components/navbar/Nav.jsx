@@ -69,6 +69,7 @@ function Nav() {
 
     const handleLanguageChange = (e) => {
         i18n.changeLanguage(e.target.value);
+        document.documentElement.lang = e.target.value;
     }
 
     const sections = [
@@ -78,8 +79,8 @@ function Nav() {
         { id: "contact", name: t("nav.contact") }
     ];
     const languages = [
-        { label: "EN", code: "en-US" },
-        { label: "FR", code: "fr-BE" },
+        { label: "EN", code: "en" },
+        { label: "FR", code: "fr" },
         { label: "IT", code: "it" }
     ];
 
@@ -97,12 +98,11 @@ function Nav() {
                     </div>
                 </div>
                 <div className="nav-wrapper right">
-                    <select name="languages" id="lang-list" defaultValue="en-US" onChange={handleLanguageChange}>
+                    <select name="languages" id="lang-list" onChange={handleLanguageChange}>
                         {languages.map(({ code, label }, index) => (
                             <option key={index} value={code}>{label}</option>
                         ))}
                     </select>
-                    {/* {{ isLightMode?<MoonSVG /> : <SunSVG />}} */}
                     <button id="light-switch" onClick={toggleMode}><img className="svg" src={isLightMode ? moonSVG : sunSVG} /></button>
                 </div>
             </div>

@@ -43,7 +43,6 @@ html {
   font-size: 120%;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
 }
 
 #root {
@@ -577,7 +576,7 @@ header {
 
 // FOOTER ////////////////////////////////////////////////////////
 footer {
-  display: flex;
+  @include flex;
   justify-content: space-between;
   flex-direction: column;
   width: 100%;
@@ -590,7 +589,7 @@ footer {
   }
 
   .ref-wrapper {
-    @include flex;
+    display: flex;
     justify-content: center;
     flex-direction: column;
 
@@ -651,7 +650,6 @@ footer {
   footer {
     flex-direction: row;
     justify-content: center;
-    align-items: space-between;
     padding: 3vh 0;
     font-size: 60%;
 
