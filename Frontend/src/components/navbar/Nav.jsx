@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import moonSVG from "./assets/moon.svg";
 import sunSVG from "./assets/sun.svg";
-import logo from "./assets/logo.svg"
+import logo from "./assets/logo.svg";
 
 function Nav() {
     const { t, i18n } = useTranslation();

@@ -42,7 +42,6 @@
 html {
   font-size: 120%;
   text-rendering: optimizeLegibility;
-  -webkit-text-size-adjust: 100%;
 }
 
 #root {
@@ -632,9 +631,6 @@ footer {
 }
 
 // MEDIA QUERIES ////////////////////////////////////////////////////////
-// Small devices (landscape phones, 576px and up) => TO DO: landscape phones (very wide, not very tall)
-@media (min-width: 576px) {}
-
 // Medium devices (tablets, 768px and up) /////
 @media (min-width: 768px) {
 
@@ -750,5 +746,8 @@ footer {
   }
 }
 
-// XXX-Large devices => TO DO: big screens (very very wide and very very tall)
-@media (min-width: 1921px) {}
+// TO DO:
+// Small devices (landscape phones, 576px and up) => landscape phones (very wide, not very tall)
+// @media (min-width: 576px) {}
+// XXX-Large devices => very big screens
+// @media (min-width: 1921px) {}
