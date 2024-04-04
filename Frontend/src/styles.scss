@@ -613,7 +613,7 @@ footer {
   }
 
   .ref-wrapper {
-    display: flex;
+    @include flex;
     justify-content: center;
     flex-direction: column;
 
