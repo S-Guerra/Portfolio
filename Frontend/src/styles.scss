@@ -99,7 +99,7 @@ nav {
         @include flex;
 
         ul {
-          height: 50px;
+          height: 40px;
           margin: 0 2px;
           fill: var(--color1);
           background-color: var(--color2);
@@ -116,13 +116,13 @@ nav {
             }
 
             &.top {
-              height: 50px;
+              height: 40px;
               padding: 0;
               margin: 0 auto;
 
               svg {
-                height: 34px;
-                margin: 8px;
+                height: 30px;
+                margin: 4px;
               }
             }
 
@@ -138,8 +138,8 @@ nav {
         }
 
         button {
-          width: 50px;
-          height: 50px;
+          width: 40px;
+          height: 40px;
           border: 1px solid var(--color1);
           margin: 0 2px;
           background-color: var(--color2);
@@ -151,8 +151,8 @@ nav {
           }
 
           .svg {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             padding: 7px;
           }
         }
@@ -274,7 +274,8 @@ header {
 
   h1,
   h2 {
-    margin: 15vh 0;
+    max-width: 90%;
+    margin: 15vh auto;
     animation: breath 10s ease 1.5s infinite;
   }
 
@@ -633,6 +634,38 @@ footer {
 // MEDIA QUERIES ////////////////////////////////////////////////////////
 // Medium devices (tablets, 768px and up) /////
 @media (min-width: 768px) {
+
+  // NAV /////
+  nav {
+    .nav-wrapper-wrapper {
+      .nav-wrapper.right {
+        ul {
+          height: 50px;
+
+          li {
+            &.top {
+              height: 50px;
+
+              svg {
+                height: 34px;
+                margin: 8px;
+              }
+            }
+          }
+        }
+
+        button {
+          width: 50px;
+          height: 50px;
+
+          .svg {
+            width: 50px;
+            height: 50px;
+          }
+        }
+      }
+    }
+  }
 
   // INTRO /////
   @keyframes breath {
