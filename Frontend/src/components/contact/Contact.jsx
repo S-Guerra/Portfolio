@@ -77,7 +77,7 @@ function Contact() {
                         onChange={(e) => setMessage(e.target.value)}
                         required
                     />
-                    <div className="g-recaptcha" data-sitekey="6LfgI2wpAAAAANOlvY16UYL7hZlKCtx-xNcnb8Kw" />
+                    <div className="g-recaptcha" data-sitekey="6LfrXK8pAAAAAPoe7qvRA3fDUJ69eLDC1x_Ka2px" />
                     <input className="submit" type="submit" value={t("contact.submit")} />
                     {errorMessage && <p className="error">{errorMessage}</p>}
                     {successMessage && <p className="success">{successMessage}</p>}
