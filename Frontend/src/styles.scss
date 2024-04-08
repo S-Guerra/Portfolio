@@ -7,6 +7,7 @@
 :root {
   --light-img: url("./assets/paper-50vw.jpg");
   --dark-img: url("./assets/carbon-50vw.jpg");
+  --color4: #f58a07;
 }
 
 @media (prefers-color-scheme: light) {
@@ -14,7 +15,6 @@
     --color1: #181b0e;
     --color2: #fbc789;
     --color3: #fefcfb;
-    --color4: #f58a07;
     --color5: #feecd8;
     --background-img: var(--light-img);
   }
@@ -25,7 +25,6 @@
     --color1: #fefcfb;
     --color2: #131317;
     --color3: #292A2F;
-    --color4: #f58a07;
     --color5: #202025;
     --background-img: var(--dark-img);
   }
@@ -355,6 +354,7 @@ header {
       font-optical-sizing: auto;
       font-weight: 400;
       font-style: normal;
+      text-shadow: 1px 1px 2px black;
 
       .quote {
         text-align: left;
@@ -546,6 +546,7 @@ header {
 
     h2 {
       text-align: center;
+      padding-bottom: 3px;
 
       span {
         font-size: 0.5em;

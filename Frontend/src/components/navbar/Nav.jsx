@@ -75,7 +75,6 @@ function Nav() {
                 "--color1": "#181b0e",
                 "--color2": "#fbc789",
                 "--color3": "#fefcfb",
-                "--color4": "#f58a07",
                 "--color5": "#feecd8",
                 "--background-img": "var(--light-img)"
             };
@@ -83,7 +82,6 @@ function Nav() {
                 "--color1": "#fefcfb",
                 "--color2": "#131317",
                 "--color3": "#292A2F",
-                "--color4": "#f58a07",
                 "--color5": "#202025",
                 "--background-img": "var(--dark-img)"
             };
