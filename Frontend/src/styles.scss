@@ -50,9 +50,7 @@ html {
   min-height: 100%;
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  background-image: var(--background-img);
-  background-color: var(--color5);
-  background-attachment: fixed;
+  background: fixed var(--color5) var(--background-img);
 }
 
 .divider {
@@ -350,7 +348,7 @@ header {
 
     blockquote {
       width: 70%;
-      padding: 5vh 0;
+      padding: 6vh 2vw;
       margin: 0 auto;
       font-family: "Caveat", cursive;
       font-size: 2em;
@@ -674,7 +672,7 @@ footer {
     }
 
     50% {
-      transform: scale(1.1);
+      transform: scale(1.2);
     }
 
     100% {
@@ -739,6 +737,15 @@ footer {
 
 // X-Large devices (large desktops, 1200px and up) /////
 @media (min-width: 1200px) {
+  #intro {
+    .intro-content-wrapper {
+      blockquote {
+        min-height: 350px;
+        background: no-repeat var(--color3) url(./assets/splash.png);
+      }
+    }
+  }
+
   footer {
     font-size: 80%;
 
