@@ -741,7 +741,9 @@ footer {
   #intro {
     .intro-content-wrapper {
       blockquote {
-        min-height: 350px;
+        padding: 3vh 2vw 6vh 2vw;
+        margin-top: 3vh;
+        min-height: 335px;
         background: no-repeat var(--color3) url(./assets/splash.png);
       }
     }

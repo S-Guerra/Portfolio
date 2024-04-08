@@ -11,28 +11,28 @@ function Contact() {
     const { t } = useTranslation();
 
     const sendEmail = async () => {
-        await fetch("http://localhost:3001/api/send-email", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                name: userName,
-                email: email,
-                message: message,
+        try {
+            const response = await fetch("https://vessdc00g5.execute-api.eu-west-3.amazonaws.com/testing", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name: userName,
+                    email: email,
+                    message: message,
+                })
             })
-        }).then(res => {
-            if (!res.ok) {
-                return res.json().then(data => {
-                    throw new Error(data.error);
-                });
-            } else {
-                setSuccessMessage("Email sent successfully");
-            }
-        }).catch(err => {
+
+
+            const result = response.json();
+            alert(result);
+            setSuccessMessage(result);
+        } catch (err) {
             console.error(err);
-            setErrorMessage(`${err}`);
-        })
+            alert("Error: " + err)
+            // setErrorMessage(`${err}`);
+        }
     }
 
     const handleSubmit = async (e) => {
@@ -77,7 +77,7 @@ function Contact() {
                         onChange={(e) => setMessage(e.target.value)}
                         required
                     />
-                    <div className="g-recaptcha" data-sitekey="6LfrXK8pAAAAAPoe7qvRA3fDUJ69eLDC1x_Ka2px" />
+                    {/* {<div className="g-recaptcha" data-sitekey="6LfrXK8pAAAAAPoe7qvRA3fDUJ69eLDC1x_Ka2px" />} */}
                     <input className="submit" type="submit" value={t("contact.submit")} />
                     {errorMessage && <p className="error">{errorMessage}</p>}
                     {successMessage && <p className="success">{successMessage}</p>}
