@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 function Contact() {
@@ -7,8 +7,23 @@ function Contact() {
     const [message, setMessage] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
+    const [isIntersecting, setIsIntersecting] = useState(false);
+    const ref = useRef(null);
 
     const { t } = useTranslation();
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsIntersecting(entry.isIntersecting);
+            },
+            { threshold: 0.33 }
+        );
+        console.log(isIntersecting);
+        observer.observe(ref.current);
+
+        return () => observer.disconnect();
+    }, [isIntersecting]);
 
     const sendEmail = async () => {
         try {
@@ -47,7 +62,7 @@ function Contact() {
 
     return (
         <section className="page-section" id="contact">
-            <div className="form-wrapper">
+            <div className={`form-wrapper ${isIntersecting ? "visible" : ""}`} ref={ref}>
                 <h2>{t("contact.intro")}<span className="smaller">{t("contact.introSmaller")}</span></h2>
                 <form onSubmit={handleSubmit} action="?" method="POST">
                     <label htmlFor="name">{t("contact.name")}</label>

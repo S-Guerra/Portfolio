@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import Project from "./Project.jsx"
 import casio from "./assets/casio.jpg"
@@ -10,9 +11,24 @@ function ProjectGroup() {
     const { t } = useTranslation();
     const captions = t("projects.captions");
     const alts = t("projects.alts");
+    const [isIntersecting, setIsIntersecting] = useState(false);
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsIntersecting(entry.isIntersecting);
+            },
+            { threshold: 0.33 }
+        );
+        observer.observe(ref.current);
+
+        return () => observer.disconnect();
+    }, [isIntersecting]);
 
     return (
-        <section className="page-section" id="projects">
+        <section className="page-section" id="projects" ref={ref}>
+            <div className={`overlay ${isIntersecting ? "visible" : ""}`} />
             <h2 className="grey">{t("projects.intro")}</h2>
             <div className="projects-wrapper-wrapper">
                 <p id="top-info">{t("projects.order")}</p>
