@@ -1,16 +1,31 @@
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 import churchill from "./assets/churchill.jpg"
 
 function Intro() {
     const { t } = useTranslation();
+    const [isIntersecting, setIsIntersecting] = useState(false);
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsIntersecting(entry.isIntersecting);
+            },
+            { threshold: 0.33 }
+        );
+        observer.observe(ref.current);
+
+        return () => observer.disconnect();
+    }, [isIntersecting]);
 
     const devSkills = ["HTML5", "CSS3", "SCSS/SASS", "JavaScript", "React.js", "Node.js", "Express.js", "Bash", "PostgreSQL", "MongoDB"];
     const learningSkills = t("intro.learningSkillsList");
 
     return (
-        <section className="page-section intro" id="intro">
-            <div className="intro-content-wrapper">
+        <section className="page-section" id="intro" ref={ref}>
+            <div className={`intro-content-wrapper ${isIntersecting ? "visible" : ""}`}>
                 <div className="text-wrapper">
                     <h2>{t("intro.intro")}</h2>
                     <p>{t("intro.storyPart1")}<br /><br />{t("intro.storyPart2")}<br /><br />{t("intro.storyPart3")}<br /></p>

@@ -325,6 +325,13 @@ header {
     max-width: 1080px;
     margin: 10vh auto;
     text-align: center;
+    opacity: 0;
+    transition: 0.2s linear;
+
+    &.visible {
+      opacity: 1;
+      transition: 0.2s linear;
+    }
 
     .text-wrapper {
       padding: 5vh 0;
@@ -443,6 +450,13 @@ header {
       flex-flow: row nowrap;
       overflow-x: auto;
       margin: 1vh auto;
+      opacity: 0;
+      transition: 0.2s linear;
+
+      &.visible {
+        opacity: 1;
+        transition: 0.2s linear;
+      }
 
       .project {
         min-width: 260px;
@@ -508,6 +522,13 @@ header {
     margin: 1vh 0 0 1vw;
     font-size: 0.9em;
     text-align: left;
+    opacity: 0;
+    transition: 0.2s linear;
+
+    &.visible {
+      opacity: 1;
+      transition: 0.2s linear;
+    }
   }
 
   p {
@@ -534,6 +555,7 @@ header {
   background-image: linear-gradient(var(--color3) 30%, var(--color2) 70%);
   text-align: center;
 
+
   .form-wrapper {
     position: absolute;
     top: 1vh;
@@ -543,6 +565,13 @@ header {
     z-index: 2;
     max-width: 1080px;
     margin: 8vh auto 0 auto;
+    opacity: 0;
+    transition: 0.2s linear;
+
+    &.visible {
+      opacity: 1;
+      transition: 0.2s linear;
+    }
 
     h2 {
       text-align: center;
@@ -596,6 +625,7 @@ header {
     }
   }
 }
+
 
 // FOOTER ////////////////////////////////////////////////////////
 footer {
