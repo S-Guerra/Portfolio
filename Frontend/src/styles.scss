@@ -326,11 +326,11 @@ header {
     margin: 10vh auto;
     text-align: center;
     opacity: 0;
-    transition: 0.3s ease-out;
+    transition: 0.2s linear;
 
     &.visible {
       opacity: 1;
-      transition: 0.3s ease-out;
+      transition: 0.2s linear;
     }
 
     .text-wrapper {
@@ -451,11 +451,11 @@ header {
       overflow-x: auto;
       margin: 1vh auto;
       opacity: 0;
-      transition: 0.3s ease-out;
+      transition: 0.2s linear;
 
       &.visible {
         opacity: 1;
-        transition: 0.3s ease-out;
+        transition: 0.2s linear;
       }
 
       .project {
@@ -523,11 +523,11 @@ header {
     font-size: 0.9em;
     text-align: left;
     opacity: 0;
-    transition: 0.3s ease-out;
+    transition: 0.2s linear;
 
     &.visible {
       opacity: 1;
-      transition: 0.3s ease-out;
+      transition: 0.2s linear;
     }
   }
 
@@ -566,11 +566,11 @@ header {
     max-width: 1080px;
     margin: 8vh auto 0 auto;
     opacity: 0;
-    transition: 0.3s ease-out;
+    transition: 0.2s linear;
 
     &.visible {
       opacity: 1;
-      transition: 0.3s ease-out;
+      transition: 0.2s linear;
     }
 
     h2 {
