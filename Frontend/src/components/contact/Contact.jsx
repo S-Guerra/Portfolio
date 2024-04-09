@@ -38,18 +38,17 @@ function Contact() {
                 })
             })
 
-            const result = response.json();
-            result.then((res) => {
-                const message = res.body.message;
+            const result = await response.json();
+            if (result.statusCode === 500) {
+                const errorMessage = result.body.error
+                throw new Error(errorMessage);
+            } else {
+                const message = result.body.message;
                 setSuccessMessage(message);
-            })
+            }
         } catch (err) {
-            const error = err.json();
-            error.then((res) => {
-                console.error(res);
-                const message = res.body.message;
-                setErrorMessage(message);
-            })
+            console.error(err);
+            setErrorMessage("Error while processing email");
         }
     }
 
