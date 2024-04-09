@@ -28,7 +28,6 @@ function ProjectGroup() {
 
     return (
         <section className="page-section" id="projects" ref={ref}>
-            <div className={`overlay ${isIntersecting ? "visible" : ""}`} />
             <h2 className="grey">{t("projects.intro")}</h2>
             <div className="projects-wrapper-wrapper">
                 <p id="top-info">{t("projects.order")}</p>

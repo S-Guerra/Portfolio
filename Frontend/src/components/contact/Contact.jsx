@@ -19,7 +19,6 @@ function Contact() {
             },
             { threshold: 0.33 }
         );
-        console.log(isIntersecting);
         observer.observe(ref.current);
 
         return () => observer.disconnect();
@@ -39,14 +38,18 @@ function Contact() {
                 })
             })
 
-
             const result = response.json();
-            alert(result);
-            setSuccessMessage(result);
+            result.then((res) => {
+                const message = res.body.message;
+                setSuccessMessage(message);
+            })
         } catch (err) {
-            console.error(err);
-            alert("Error: " + err)
-            // setErrorMessage(`${err}`);
+            const error = err.json();
+            error.then((res) => {
+                console.error(res);
+                const message = res.body.message;
+                setErrorMessage(message);
+            })
         }
     }
 
@@ -92,7 +95,7 @@ function Contact() {
                         onChange={(e) => setMessage(e.target.value)}
                         required
                     />
-                    {/* {<div className="g-recaptcha" data-sitekey="6LfrXK8pAAAAAPoe7qvRA3fDUJ69eLDC1x_Ka2px" />} */}
+                    {<div className="g-recaptcha" data-sitekey="6LfrXK8pAAAAAPoe7qvRA3fDUJ69eLDC1x_Ka2px" />}
                     <input className="submit" type="submit" value={t("contact.submit")} />
                     {errorMessage && <p className="error">{errorMessage}</p>}
                     {successMessage && <p className="success">{successMessage}</p>}
