@@ -450,6 +450,13 @@ header {
       flex-flow: row nowrap;
       overflow-x: auto;
       margin: 1vh auto;
+      opacity: 0;
+      transition: 0.3s ease-out;
+
+      &.visible {
+        opacity: 1;
+        transition: 0.3s ease-out;
+      }
 
       .project {
         min-width: 260px;
@@ -515,6 +522,13 @@ header {
     margin: 1vh 0 0 1vw;
     font-size: 0.9em;
     text-align: left;
+    opacity: 0;
+    transition: 0.3s ease-out;
+
+    &.visible {
+      opacity: 1;
+      transition: 0.3s ease-out;
+    }
   }
 
   p {

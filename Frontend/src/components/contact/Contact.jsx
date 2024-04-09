@@ -26,7 +26,7 @@ function Contact() {
 
     const sendEmail = async () => {
         try {
-            const response = await fetch("https://vessdc00g5.execute-api.eu-west-3.amazonaws.com/testing", {
+            const response = await fetch("https://vessdc00g5.execute-api.eu-west-3.amazonaws.com/live", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

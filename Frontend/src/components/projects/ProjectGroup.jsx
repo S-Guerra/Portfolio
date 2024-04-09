@@ -27,11 +27,11 @@ function ProjectGroup() {
     }, [isIntersecting]);
 
     return (
-        <section className="page-section" id="projects" ref={ref}>
+        <section className="page-section" id="projects">
             <h2 className="grey">{t("projects.intro")}</h2>
             <div className="projects-wrapper-wrapper">
-                <p id="top-info">{t("projects.order")}</p>
-                <div className="projects-wrapper">
+                <p className={isIntersecting ? "visible" : ""} id="top-info">{t("projects.order")}</p>
+                <div className={`projects-wrapper ${isIntersecting ? "visible" : ""}`} ref={ref}>
                     <Project
                         href="https://github.com/S-Guerra/FryderykGPT"
                         src={chopin}
