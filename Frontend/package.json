@@ -1,6 +1,6 @@
 {
   "name": "s-guerra-portfolio",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "My web development portfolio where I combine creativity and technical expertise to create an engaging and functional website",
   "type": "module",
   "scripts": {
@@ -9,7 +9,13 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
-  "keywords": [],
+  "keywords": [
+    "portfolio",
+    "web",
+    "projects",
+    "frontend",
+    "development"
+  ],
   "author": "S. Guerra",
   "license": "MPL-2.0",
   "dependencies": {
