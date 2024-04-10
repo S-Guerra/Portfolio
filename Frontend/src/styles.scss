@@ -325,11 +325,11 @@ header {
     max-width: 1080px;
     margin: 10vh auto;
     text-align: center;
-    opacity: 0;
+    opacity: 1;
     transition: 0.2s linear;
 
-    &.visible {
-      opacity: 1;
+    &.invisible {
+      opacity: 0;
       transition: 0.2s linear;
     }
 
