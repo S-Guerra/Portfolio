@@ -53,6 +53,9 @@
         "better": "oppure, meglio..."
     },
     "contact": {
+        "success1": "Grazie ",
+        "success2": "! Il tuo messaggio è stato inviato con successo!",
+        "error": "C'è stato un errore durante l'elaborazione dell'email.",
         "intro": "Assumimi! ",
         "introSmaller": "(se ne hai il coraggio)",
         "name": "Nome",

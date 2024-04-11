@@ -43,12 +43,12 @@ function Contact() {
                 const errorMessage = result.body.error
                 throw new Error(errorMessage);
             } else {
-                const message = result.body.message;
-                setSuccessMessage(message);
+                const name = result.body.name;
+                setSuccessMessage(t("contact.success1") + name + t("contact.success2"));
             }
         } catch (err) {
             console.error(err);
-            setErrorMessage("Error while processing email");
+            setErrorMessage(t("contact.error"));
         }
     }
 
@@ -58,7 +58,7 @@ function Contact() {
             await sendEmail();
         } catch (err) {
             console.error(`Error while processing email: ${err}`);
-            setErrorMessage("Error while processing email");
+            setErrorMessage(t("contact.error"));
         }
     };
 

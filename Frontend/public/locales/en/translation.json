@@ -53,6 +53,9 @@
         "better": "or better..."
     },
     "contact": {
+        "success1": "Thank you ",
+        "success2": "! Your message has been sent successfully!",
+        "error": "Error while processing email.",
         "intro": "Hire me! ",
         "introSmaller": "(if you dare)",
         "name": "Name",
