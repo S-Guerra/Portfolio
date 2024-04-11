@@ -53,6 +53,9 @@
         "better": "ou mieux..."
     },
     "contact": {
+        "success1": "Merci ",
+        "success2": "! Votre message a été envoyé avec succès!",
+        "error": "Erreur lors du traitement de l'email.",
         "intro": "Engagez-moi! ",
         "introSmaller": "(si vous osez)",
         "name": "Nom",

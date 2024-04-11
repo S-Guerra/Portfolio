@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-
 import churchill from "./assets/churchill.jpg"
 
 function Intro() {
@@ -9,7 +8,7 @@ function Intro() {
     const learningSkills = t("intro.learningSkillsList");
 
     return (
-        <section className="page-section intro" id="intro">
+        <section className="page-section" id="intro">
             <div className="intro-content-wrapper">
                 <div className="text-wrapper">
                     <h2>{t("intro.intro")}</h2>
