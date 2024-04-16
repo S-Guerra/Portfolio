@@ -4,7 +4,7 @@ import churchill from "./assets/churchill.jpg"
 function Intro() {
     const { t } = useTranslation();
 
-    const devSkills = ["HTML5", "CSS3", "SCSS/SASS", "JavaScript", "React.js", "Node.js", "Express.js", "Bash", "PostgreSQL", "MongoDB"];
+    const devSkills = ["HTML5", "CSS3", "SCSS/SASS", "JavaScript", "React.js", "Node.js", "Express.js", "Bash", "PostgreSQL", "AWS"];
     const learningSkills = t("intro.learningSkillsList");
 
     return (
