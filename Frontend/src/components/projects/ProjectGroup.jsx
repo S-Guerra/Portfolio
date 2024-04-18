@@ -57,7 +57,7 @@ function ProjectGroup() {
                         figcaption={captions[3]}
                     />
                     <Project
-                        href="https://codepen.io/LeSGuerra/pen/VwdPVPd"
+                        href="https://s-guerra.github.io/New-Retro-Sunset/"
                         src={sunset}
                         alt={alts[4]}
                         figcaption={captions[4]}
