@@ -15,7 +15,7 @@ app.use(bodyparser.json());
 
 // CORS middleware
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*"); // !!! TODO: change to domain name to prevent CSRF attacks
+    res.header("Access-Control-Allow-Origin", "*"); // change to your domain name
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
